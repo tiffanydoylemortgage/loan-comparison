@@ -305,8 +305,9 @@ function classifyLoan(amt,limit){
   if(amt<=limit)return'High-Balance Conforming';
   return'Jumbo';
 }
-function getTaxIns(pp){
-  return{tax:(pp*0.0125)/12, ins:(pp*0.003)/12};
+function getTaxIns(pp,loan){
+  var loanAmt = loan || pp; // use loan amount for insurance, purchase price for tax
+  return{tax:(pp*0.0125)/12, ins:(loanAmt*0.003)/12};
 }
 function getOptData(prefix, loanAmt, loanYears, loanType){
   const ptsBase=loanAmt;
@@ -486,14 +487,14 @@ function buildSummary(){
   const pp_val=pa(document.getElementById('pp').value);
   const dpRaw=document.getElementById('dp').value;
   const dp_val=dpRaw.includes('%')?pp_val*pa(dpRaw)/100:pa(dpRaw);
-  const {tax,ins}=getTaxIns(pp_val);
+  const {tax,ins}=getTaxIns(pp_val,pp_val-dp_val);
   const loanAmt=pp_val-dp_val;
   const limit=getLimit();
   const county_sel=document.getElementById('county');
   const countyName=county_sel.options[county_sel.selectedIndex].text.split(' —')[0];
   const clientName=(document.getElementById('clientName')||{}).value||'Client';
   set('sum-client-name',clientName);
-  set('sum-details',fmt(pp_val)+' Purchase · '+fmt(dp_val)+' Down ('+pct((dp_val/pp_val)*100)+') · '+countyName+' County · '+((document.getElementById('today')||{}).value||new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})));
+  set('sum-details','Purchase Price: '+fmt(pp_val)+' · Down Payment: '+fmt(dp_val)+' ('+pct((dp_val/pp_val)*100)+') · Loan Amount: '+fmt(pp_val-dp_val)+' · '+countyName+' County · '+(document.getElementById('today')||{}).value);
 
   
     (function(){
@@ -559,4 +560,5 @@ function buildSummary(){
     </div>
   </div>
 </div>
+<div id="print-summary"></div>
 </body>
