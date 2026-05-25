@@ -501,7 +501,7 @@ function calculate(){
       ['Monthly P&I',[cBest?fmt(cBest.pi):'—',fBest?fmt(fBest.pi):'—']],
       ['MIP / PMI',['Varies by LTV',fmt(mip)+'/mo ('+mipNote+')']],
       ['Prop. Tax / mo',[fmt(tax),fmt(tax)]],
-      ['Insurance / mo',[fmt(ins),fmt(ins)]],
+      ['Homeowners Ins / mo (0.3% of loan)',[fmt(ins),fmt(ins)]],
     ];
     var html=rows.map(function(r){
       var cells=r[1].map(function(v){return'<td>'+v+'</td>';}).join('');
@@ -525,7 +525,7 @@ function buildSummary(){
   const countyName=county_sel.options[county_sel.selectedIndex].text.split(' —')[0];
   const clientName=(document.getElementById('clientName')||{}).value||'Client';
   set('sum-client-name',clientName);
-  set('sum-details','Purchase Price: '+fmt(pp_val)+' · Down Payment: '+fmt(dp_val)+' ('+pct((dp_val/pp_val)*100)+') · Loan Amount: '+fmt(pp_val-dp_val)+' · '+countyName+' County · '+(document.getElementById('today')||{}).value);
+  set('sum-details','Purchase Price: '+fmt(pp_val)+'  ·  Down Payment: '+fmt(dp_val)+' ('+pct((dp_val/pp_val)*100)+')  ·  Loan Amount: '+fmt(pp_val-dp_val)+'  ·  '+countyName+' County  ·  '+(document.getElementById('today')||{}).value);
 
   
     (function(){
@@ -547,7 +547,7 @@ function buildSummary(){
         ['Points ($)',opts.map(o=>fmt(o.ptsDollar))],
         ['Monthly P&I',opts.map(o=>o.r>0?fmt(o.pi):'—')],
         ['Prop. Tax / mo',opts.map(()=>fmt(tax))],
-        ['Insurance / mo',opts.map(()=>fmt(ins))],
+        ['Homeowners Ins / mo (0.3% of loan)',opts.map(()=>fmt(ins))],
       ];
       var html=rows.map(function(row){
         var cells=row[1].map(function(v){return'<td>'+v+'</td>';}).join('');
@@ -577,7 +577,7 @@ function buildSummary(){
         ['Points ($)',opts.map(o=>fmt(o.ptsDollar))],
         ['Monthly P&I',opts.map(o=>o.r>0?fmt(o.pi):'—')],
         ['Prop. Tax / mo',opts.map(()=>fmt(tax))],
-        ['Insurance / mo',opts.map(()=>fmt(ins))],
+        ['Homeowners Ins / mo (0.3% of loan)',opts.map(()=>fmt(ins))],
       ];
       var html=rows.map(function(row){
         var cells=row[1].map(function(v){return'<td>'+v+'</td>';}).join('');

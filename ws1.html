@@ -483,7 +483,7 @@ var ti=getTaxIns(pp,pp-dp);
 var tax=ti.tax,ins=ti.ins;
 sv("sum-client",gv("clientName")||"Client");
 var sel=el("county"),cname=sel?sel.options[sel.selectedIndex].text.split("--")[0].split("\u2014")[0].trim():"";
-sv("sum-details","Purchase Price: "+fmtd(pp)+" &nbsp;&middot;&nbsp; Down Payment: "+fmtd(dp)+" ("+fmtpct((dp/pp)*100)+") &nbsp;&middot;&nbsp; Loan Amount: "+fmtd(pp-dp)+" &nbsp;&middot;&nbsp; "+cname+" County &nbsp;&middot;&nbsp; "+gv("today"));
+sv("sum-details","Purchase Price: "+fmtd(pp)+" · Down Payment: "+fmtd(dp)+" ("+fmtpct((dp/pp)*100)+") · Loan Amount: "+fmtd(pp-dp)+" · "+cname+" County · "+gv("today"));
 (function(){
 var lamt=loan;
 var opts=getOpts("p1",lamt,30,false);
