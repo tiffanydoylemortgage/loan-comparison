@@ -234,16 +234,17 @@ function getOpts(pid,loan,years,isIO){
   return opts;
 }
 
-function renderVis(pid,opts,tax,ins){
+function renderVis(pid,opts,tax,ins,pmi){
+  var pmiAmt=pmi||0;
   var vis=el(pid+'-vis');
   if(!vis)return;
   var valid=[];
-  for(var i=0;i<opts.length;i++){if(opts[i].r>0)valid.push(opts[i].pi+tax+ins);}
+  for(var i=0;i<opts.length;i++){if(opts[i].r>0)valid.push(opts[i].pi+tax+ins+pmiAmt);}
   var minP=valid.length?Math.min.apply(null,valid):0;
   var html='';
   for(var i=0;i<opts.length;i++){
     var o=opts[i];
-    var piti=o.pi+tax+ins;
+    var piti=o.pi+tax+ins+pmiAmt;
     var best=o.r>0&&piti===minP&&valid.length>1;
     var rStr=o.r>0?parseFloat(o.r.toFixed(3))+'%':'--';
     var pStr=o.pts>0?o.pts+'pts / '+fmtd(o.ptsDollar):'0 pts';
@@ -260,7 +261,8 @@ function renderVis(pid,opts,tax,ins){
   vis.innerHTML=html;
 }
 
-function renderTable(pid,opts,tax,ins,extraRows){
+function renderTable(pid,opts,tax,ins,extraRows,pmi){
+  var pmiAmt=pmi||0;
   var tbody=el(pid+'-tbody');
   if(!tbody)return;
   var rows=[
@@ -285,7 +287,7 @@ function renderTable(pid,opts,tax,ins,extraRows){
   // PITI row
   var pitiCells='';
   for(var c=0;c<opts.length;c++){
-    var piti=opts[c].pi+tax+ins;
+    var piti=opts[c].pi+tax+ins+pmiAmt;
     pitiCells+='<td><strong>'+(opts[c].r>0?fmtd(piti):'--')+'</strong></td>';
   }
   html+='<tr class="piti"><td class="lbl">Est. PITI / Month</td>'+pitiCells+'</tr>';
@@ -469,12 +471,13 @@ function calculate(){
   var loan=pp-dp, limit=getLimit(), lc=classifyLoan(loan,limit);
   var ti=getTaxIns(pp,loan); var tax=ti.tax,ins=ti.ins;
   var armType=gv('p3-arm-type')||'ARM';
+  var pmi1=pa(gv('p1-pmi')); var pmi2=pa(gv('p2-pmi')); var pmi3=pa(gv('p3-pmi'));
   var o1=getOpts('p1',loan,30,false);
   var o2=getOpts('p2',loan,40,false);
   var o3=getOpts('p3',loan,30,false);
-  renderVis('p1',o1,tax,ins); renderTable('p1',o1,tax,ins,[['Classification',function(){return lc;}]]);
-  renderVis('p2',o2,tax,ins); renderTable('p2',o2,tax,ins,[['Classification',function(){return lc;}]]);
-  renderVis('p3',o3,tax,ins); renderTable('p3',o3,tax,ins,[['Loan Type',function(){return armType;}]]);
+  renderVis('p1',o1,tax,ins,pmi1); renderTable('p1',o1,tax,ins,[['Classification',function(){return lc;}],['Monthly PMI',function(){return pmi1>0?fmtd(pmi1):'N/A';}]],pmi1);
+  renderVis('p2',o2,tax,ins,pmi2); renderTable('p2',o2,tax,ins,[['Classification',function(){return lc;}],['Monthly PMI',function(){return pmi2>0?fmtd(pmi2):'N/A';}]],pmi2);
+  renderVis('p3',o3,tax,ins,pmi3); renderTable('p3',o3,tax,ins,[['Loan Type',function(){return armType;}],['Monthly PMI',function(){return pmi3>0?fmtd(pmi3):'N/A';}]],pmi3);
 }function buildSummary(){
 var pp=pa(gv("pp")),dpR=gv("dp");
 var dp=dpR.indexOf("%")>=0?pp*pa(dpR)/100:pa(dpR);
@@ -596,6 +599,30 @@ tbody.innerHTML=html;
       <button class="btn" onclick="closeSaveModal()">Done</button>
     </div>
   </div>
+<div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border);display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap;">
+  <div class="ig">
+    <label>Monthly PMI ($) <span style="font-weight:400;text-transform:none;font-size:10px;color:#5a6480;">— enter 0 if none</span></label>
+    <input type="text" id="p1-pmi" placeholder="e.g. 285" oninput="calculate()" style="width:160px;"/>
+  </div>
+  <div style="font-size:11px;color:#5a6480;padding-bottom:8px;line-height:1.5;">PMI applies to all 3 rate options for this product.<br>Leave blank or enter 0 if not applicable.</div>
+<div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border);display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap;">
+  <div class="ig">
+    <label>Monthly PMI ($) <span style="font-weight:400;text-transform:none;font-size:10px;color:#5a6480;">— enter 0 if none</span></label>
+    <input type="text" id="p2-pmi" placeholder="e.g. 285" oninput="calculate()" style="width:160px;"/>
+  </div>
+  <div style="font-size:11px;color:#5a6480;padding-bottom:8px;line-height:1.5;">PMI applies to all 3 rate options for this product.<br>Leave blank or enter 0 if not applicable.</div>
+<div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border);display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap;">
+  <div class="ig">
+    <label>Monthly PMI ($) <span style="font-weight:400;text-transform:none;font-size:10px;color:#5a6480;">— enter 0 if none</span></label>
+    <input type="text" id="p3-pmi" placeholder="e.g. 285" oninput="calculate()" style="width:160px;"/>
+  </div>
+  <div style="font-size:11px;color:#5a6480;padding-bottom:8px;line-height:1.5;">PMI applies to all 3 rate options for this product.<br>Leave blank or enter 0 if not applicable.</div>
+</div>
+
+</div>
+
+</div>
+
 </div>
 
 <!-- LOAD MODAL -->

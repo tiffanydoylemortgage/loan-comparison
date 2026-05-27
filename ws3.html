@@ -198,7 +198,15 @@ body{font-family:'Barlow',sans-serif;background:var(--bg);color:var(--text);font
       <div class="rate-row"><label>Points (%)</label><input type="text" id="conv-p3" placeholder="e.g. 0.5" oninput="calculate()"/></div>
     </div></div></div><div><div class="vis-cards" id="conv-vis"></div>
   <table class="rtable"><thead><tr><th>Payment Component</th><th class="opt">Option 1</th><th class="opt">Option 2</th><th class="opt">Option 3</th></tr></thead>
-  <tbody id="conv-tbody"></tbody></table></div></div>
+  <tbody id="conv-tbody"></tbody></table></div>
+<div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border);display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap;">
+  <div class="ig">
+    <label>Monthly PMI ($) <span style="font-weight:400;text-transform:none;font-size:10px;color:#5a6480;">— enter 0 if none</span></label>
+    <input type="text" id="conv-pmi" placeholder="e.g. 285" oninput="calculate()" style="width:160px;"/>
+  </div>
+  <div style="font-size:11px;color:#5a6480;padding-bottom:8px;line-height:1.5;">PMI applies to all 3 rate options for this product.<br>Leave blank or enter 0 if not applicable.</div>
+</div>
+</div>
 <div class="tc" id="tab-fha">
   <div class="note-box note-fha"><strong>FHA Note:</strong> Upfront MIP (1.75%) is added to the loan balance. Annual MIP (0.55%) is included in the monthly payment.</div>
   <div class="rate-entry"><h3>FHA 30-Year Fixed — Rate Options</h3><div class="rate-grid"><div class="rate-col"><h4>Option 1</h4>
@@ -313,15 +321,16 @@ function getOptData(prefix, loanAmt, loanYears, loanType){
   }
   return opts;
 }
-function renderProduct(prefix, opts, tax, ins, extraRows, loanClass){
+function renderProduct(prefix, opts, tax, ins, extraRows, loanClass, pmi){
+  var pmiAmt=pmi||0;
   const valid=opts.filter(o=>o.r>0);
-  const pitits=valid.map(o=>o.pi+tax+ins);
+  const pitits=valid.map(o=>o.pi+tax+ins+pmiAmt);
   const minPiti=pitits.length?Math.min(...pitits):0;
 
   // Vis cards
   const vis=document.getElementById(prefix+'-vis');
   if(vis) vis.innerHTML=opts.map(function(o,i){
-    var piti=o.pi+tax+ins;
+    var piti=o.pi+tax+ins+pmiAmt;
     var isBest=o.r>0&&piti===minPiti&&valid.length>1;
     var rateStr=o.r>0?o.r.toFixed(3).replace(/\.?0+$/,'')+'%':'—';
     var ptsStr=o.pts>0?o.pts+'pts · '+fmt(o.ptsDollar):'0 pts · No Cost';
@@ -355,7 +364,7 @@ function renderProduct(prefix, opts, tax, ins, extraRows, loanClass){
     var cells=row[1].map(function(v){return'<td>'+v+'</td>';}).join('');
     return'<tr class="'+(sec?'sec-row':'')+'"><td class="lbl">'+row[0]+'</td>'+cells+'</tr>';
   }).join('');
-  var pitiCells=opts.map(function(o){var piti=o.pi+tax+ins;return'<td><strong>'+(o.r>0?fmt(piti):'—')+'</strong></td>';}).join('');
+  var pitiCells=opts.map(function(o){var piti=o.pi+tax+ins+pmiAmt;return'<td><strong>'+(o.r>0?fmt(piti):'—')+'</strong></td>';}).join('');
   html+='<tr class="piti-row"><td class="lbl">Est. PITI / Month</td>'+pitiCells+'</tr>';
   tbody.innerHTML=html;
 }
