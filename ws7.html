@@ -137,7 +137,7 @@ body{font-family:'Barlow',sans-serif;background:var(--bg);color:var(--text);font
 <option value="977500">Sonoma County &mdash; $977,500</option>
 <option value="832750">Stanislaus County &mdash; $832,750</option>
 <option value="1027500">Ventura County &mdash; $1,027,500</option>
-<option value="832750">Yolo County &mdash; $832,750</option></select></div><div class="ig"><label>Purchase Price</label><input type="text" id="pp" value="$800,000" oninput="calculate()"/></div><div class="ig"><label>Down Payment</label><input type="text" id="dp" value="20%" oninput="calculate()"/></div><div class="ig"><label>Date</label><input type="text" id="today" style="width:145px;" placeholder="e.g. May 25, 2026"/></div></div><div class="c-banner"><span id="c-banner-txt"></span></div><div class="tc act" style="display:block;padding:16px 20px;" id="tab-s30"><div class="card"><h3>Conventional 30-Year Fixed &mdash; Rate Options</h3><div class="rate-grid"><div class="rate-col"><h4>Option 1</h4><div class="rr"><label>Rate (%)</label><input type="text" id="s30-r1" placeholder="6.875" oninput="calculate()"/></div><div class="rr"><label>Points (%)</label><input type="text" id="s30-p1" placeholder="0.5" oninput="calculate()"/></div></div><div class="rate-col"><h4>Option 2</h4><div class="rr"><label>Rate (%)</label><input type="text" id="s30-r2" placeholder="6.875" oninput="calculate()"/></div><div class="rr"><label>Points (%)</label><input type="text" id="s30-p2" placeholder="0.5" oninput="calculate()"/></div></div><div class="rate-col"><h4>Option 3</h4><div class="rr"><label>Rate (%)</label><input type="text" id="s30-r3" placeholder="6.875" oninput="calculate()"/></div><div class="rr"><label>Points (%)</label><input type="text" id="s30-p3" placeholder="0.5" oninput="calculate()"/></div></div></div><div class="pmi-row"><div class="ig"><label>Monthly PMI ($) &nbsp;<span style="font-weight:400;text-transform:none;font-size:10px;color:#5a6480;">enter 0 if none</span></label><input type="text" id="s30-pmi" placeholder="e.g. 285" oninput="calculate()"/></div><div class="pmi-note">PMI applies to all 3 rate options.<br>Leave blank or 0 if not applicable.</div></div></div><div class="vis-cards" id="s30-vis"></div><table class="rtable"><thead><tr><th>Component</th><th class="opt">Option 1</th><th class="opt">Option 2</th><th class="opt">Option 3</th></tr></thead><tbody id="s30-tbody"></tbody></table></div><div class="disc"><strong>Disclosure:</strong> Illustrative purposes only. Not a loan commitment or rate guarantee. PITI includes est. property tax (1.25%/yr) and homeowners insurance (0.30%/yr of loan amount). Points estimated at time of quote. Subject to credit approval, appraisal, and underwriting. Conforming limits per 2026 FHFA. <strong>New American Funding</strong> NMLS# 6606 &middot; newamericanfunding.com</div><div class="modal" id="summary-modal"><div class="modal-inner" id="summary-modal-inner"><div class="modal-hdr"><h2>30yr Conventional &mdash; Client Summary</h2><button class="close-x" onclick="closeSummaryModal()">&#10005;</button></div><div class="modal-body"><div class="sum-client"><div><h3 id="sum-client-name"></h3><p id="sum-details"></p></div><div class="lo-side">Tiffany Doyle &nbsp;|&nbsp; NMLS# 236890<br>408.607.9421 &nbsp;|&nbsp; 669.321.5551<br>Tiffany.Doyle@nafinc.com<br>17190 Monterey Rd Ste 202 &middot; Morgan Hill, CA 95037</div></div><div class="sum-sec"><h4>30-Year Fixed Conventional</h4><table class="stbl"><thead><tr><th>Component</th><th class="opt">Option 1</th><th class="opt">Option 2</th><th class="opt">Option 3</th></tr></thead><tbody id="ssum-s30"></tbody></table></div></div><div class="modal-foot"><strong>Disclosure:</strong> Illustrative only. Not a loan commitment. PITI includes est. property tax (1.25%/yr) and homeowners insurance (0.30%/yr of loan). Points estimated at time of quote. Subject to credit approval and underwriting. New American Funding NMLS# 6606.</div><div class="modal-actions"><button class="btn" onclick="closeSummaryModal()">Close</button><button class="btn primary" onclick="printSummary()">&#128438; Print / Save PDF</button></div></div></div>
+<option value="832750">Yolo County &mdash; $832,750</option></select></div><div class="ig"><label>Purchase Price</label><input type="text" id="pp" value="$800,000" oninput="calculate()"/></div><div class="ig"><label>Down Payment</label><input type="text" id="dp" value="20%" oninput="calculate()"/></div><div class="ig"><label>Date</label><input type="text" id="today" style="width:145px;" placeholder="e.g. May 25, 2026"/></div><div class="ig"><label>HOA / mo <span style="font-weight:400;text-transform:none;font-size:10px;color:#5a6480;">(optional)</span></label><input type="text" id="hoa" placeholder="e.g. 450" oninput="calculate()" style="width:120px;"/></div></div><div class="c-banner"><span id="c-banner-txt"></span></div><div class="tc act" style="display:block;padding:16px 20px;" id="tab-s30"><div class="card"><h3>Conventional 30-Year Fixed &mdash; Rate Options</h3><div class="rate-grid"><div class="rate-col"><h4>Option 1</h4><div class="rr"><label>Rate (%)</label><input type="text" id="s30-r1" placeholder="6.875" oninput="calculate()"/></div><div class="rr"><label>Points (%)</label><input type="text" id="s30-p1" placeholder="0.5" oninput="calculate()"/></div></div><div class="rate-col"><h4>Option 2</h4><div class="rr"><label>Rate (%)</label><input type="text" id="s30-r2" placeholder="6.875" oninput="calculate()"/></div><div class="rr"><label>Points (%)</label><input type="text" id="s30-p2" placeholder="0.5" oninput="calculate()"/></div></div><div class="rate-col"><h4>Option 3</h4><div class="rr"><label>Rate (%)</label><input type="text" id="s30-r3" placeholder="6.875" oninput="calculate()"/></div><div class="rr"><label>Points (%)</label><input type="text" id="s30-p3" placeholder="0.5" oninput="calculate()"/></div></div></div><div class="pmi-row"><div class="ig"><label>Monthly PMI ($) &nbsp;<span style="font-weight:400;text-transform:none;font-size:10px;color:#5a6480;">enter 0 if none</span></label><input type="text" id="s30-pmi" placeholder="e.g. 285" oninput="calculate()"/></div><div class="pmi-note">PMI applies to all 3 rate options.<br>Leave blank or 0 if not applicable.</div></div></div><div class="vis-cards" id="s30-vis"></div><table class="rtable"><thead><tr><th>Component</th><th class="opt">Option 1</th><th class="opt">Option 2</th><th class="opt">Option 3</th></tr></thead><tbody id="s30-tbody"></tbody></table></div><div class="disc"><strong>Disclosure:</strong> Illustrative purposes only. Not a loan commitment or rate guarantee. PITI includes est. property tax (1.25%/yr) and homeowners insurance (0.30%/yr of loan amount). Points estimated at time of quote. Subject to credit approval, appraisal, and underwriting. Conforming limits per 2026 FHFA. <strong>New American Funding</strong> NMLS# 6606 &middot; newamericanfunding.com</div><div class="modal" id="summary-modal"><div class="modal-inner" id="summary-modal-inner"><div class="modal-hdr"><h2>30yr Conventional &mdash; Client Summary</h2><button class="close-x" onclick="closeSummaryModal()">&#10005;</button></div><div class="modal-body"><div class="sum-client"><div><h3 id="sum-client-name"></h3><p id="sum-details"></p></div><div class="lo-side">Tiffany Doyle &nbsp;|&nbsp; NMLS# 236890<br>408.607.9421 &nbsp;|&nbsp; 669.321.5551<br>Tiffany.Doyle@nafinc.com<br>17190 Monterey Rd Ste 202 &middot; Morgan Hill, CA 95037</div></div><div class="sum-sec"><h4>30-Year Fixed Conventional</h4><table class="stbl"><thead><tr><th>Component</th><th class="opt">Option 1</th><th class="opt">Option 2</th><th class="opt">Option 3</th></tr></thead><tbody id="ssum-s30"></tbody></table></div></div><div class="modal-foot"><strong>Disclosure:</strong> Illustrative only. Not a loan commitment. PITI includes est. property tax (1.25%/yr) and homeowners insurance (0.30%/yr of loan). Points estimated at time of quote. Subject to credit approval and underwriting. New American Funding NMLS# 6606.</div><div class="modal-actions"><button class="btn" onclick="closeSummaryModal()">Close</button><button class="btn primary" onclick="printSummary()">&#128438; Print / Save PDF</button></div></div></div>
 <div class="modal" id="save-modal">
   <div class="modal-inner" style="max-width:520px;">
     <div class="modal-hdr"><h2>&#128190; Save Session</h2><button class="close-x" onclick="closeSaveModal()">&#10005;</button></div>
@@ -246,10 +246,11 @@ function renderVis(pid,opts,tax,ins,pmi){
   }
   vis.innerHTML=html;
 }
-function renderTable(pid,opts,tax,ins,extraRows,pmi){
+function renderTable(pid,opts,tax,ins,extraRows,pmi,hoa){
   var tbody=el(pid+'-tbody');
   if(!tbody)return;
   var pmiAmt=pmi||0;
+  var hoaAmt=hoa||0;
   var rows=[
     ['Rate',function(o){return o.r>0?fmtpct(o.r):'--';}],
     ['Points (%)',function(o){return o.pts>0?o.pts+'%':'0%';}],
@@ -271,10 +272,10 @@ function renderTable(pid,opts,tax,ins,extraRows,pmi){
   }
   var pitiCells='';
   for(var c=0;c<opts.length;c++){
-    var piti=opts[c].pi+tax+ins+pmiAmt;
+    var piti=opts[c].pi+tax+ins+pmiAmt+hoaAmt;
     pitiCells+='<td><strong>'+(opts[c].r>0?fmtd(piti):'--')+'</strong></td>';
   }
-  html+='<tr class="piti"><td class="lbl">Est. PITI / Month</td>'+pitiCells+'</tr>';
+  html+='<tr class="piti"><td class="lbl">Est. PITIA / Month</td>'+pitiCells+'</tr>';
   tbody.innerHTML=html;
 }
 function saveSession(){
@@ -371,12 +372,14 @@ function calculate(){
   var loan=pp-dp, limit=getLimit(), lc=classifyLoan(loan,limit);
   var ti=getTaxIns(pp,loan); var tax=ti.tax,ins=ti.ins;
   var pmi=pa(gv('s30-pmi'));
+  var hoa=pa(gv('hoa'));
   var opts=getOpts('s30',loan,30,false);
-  renderVis('s30',opts,tax,ins,pmi);
+  renderVis('s30',opts,tax+hoa,ins,pmi);
   renderTable('s30',opts,tax,ins,[
     ['Classification',function(){return lc;}],
-    ['Monthly PMI',function(){return pmi>0?fmtd(pmi):'N/A';}]
-  ],pmi);
+    ['Monthly PMI',function(){return pmi>0?fmtd(pmi):'N/A';}],
+    ['HOA / mo',function(){return hoa>0?fmtd(hoa):'N/A';}]
+  ],pmi,hoa);
 }function buildSummary(){
 var pp=pa(gv("pp")),dpR=gv("dp");
 var dp=dpR.indexOf("%")>=0?pp*pa(dpR)/100:pa(dpR);
@@ -388,6 +391,7 @@ sv("sum-client-name",gv("clientName")||"Client");
 sv("sum-details","Purchase Price: "+fmtd(pp)+"  ·  Down Payment: "+fmtd(dp)+" ("+fmtpct((dp/pp)*100)+"%)  ·  Loan Amount: "+fmtd(loan)+"  ·  "+cname+" County  ·  "+gv("today"));
 (function(){
 var pmiS=pa(gv("s30-pmi"));
+var hoaS=pa(gv("hoa"));
 var opts=getOpts("s30",loan,30,false);
 var tbody=el("ssum-s30");
 if(!tbody)return;
@@ -398,7 +402,8 @@ var rows=[
 ["Monthly PMI",function(){return pmiS>0?fmtd(pmiS):"N/A";}],
 ["Monthly P&I",function(o){return o.r>0?fmtd(o.pi):"--";}],
 ["Prop. Tax / mo",function(){return fmtd(tax);}],
-["Insurance / mo",function(){return fmtd(ins);}]
+["Insurance / mo",function(){return fmtd(ins);}],
+["HOA / mo",function(){return hoaS>0?fmtd(hoaS):"N/A";}]
 ];
 var html="";
 for(var r=0;r<rows.length;r++){
@@ -408,10 +413,10 @@ html+="<tr><td class='lbl'>"+row[0]+"</td>"+cells+"</tr>";
 }
 var pc="";
 for(var c=0;c<opts.length;c++){
-var piti=opts[c].pi+tax+ins+pmiS;
+var piti=opts[c].pi+tax+ins+pmiS+hoaS;
 pc+="<td><strong>"+(opts[c].r>0?fmtd(piti):"--")+"</strong></td>";
 }
-html+="<tr class='piti'><td class='lbl'>Est. PITI / Month</td>"+pc+"</tr>";
+html+="<tr class='piti'><td class='lbl'>Est. PITIA / Month</td>"+pc+"</tr>";
 tbody.innerHTML=html;
 })();
-}</script></body></html>
+}
