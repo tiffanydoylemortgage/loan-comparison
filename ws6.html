@@ -563,6 +563,7 @@ pc+="<td><strong>"+(opts[c].r>0?fmtd(piti):"--")+"</strong></td>";
 }
 html+="<tr class='piti'><td class='lbl'>Est. PITI / Month</td>"+pc+"</tr>";
 tbody.innerHTML=html;
+renderSumVis("c30",opts,tax,ins,pmiS,0);
 })();
 (function(){
 var pmiS=pa(gv("c40-pmi"));
@@ -591,5 +592,6 @@ pc+="<td><strong>"+(opts[c].r>0?fmtd(piti):"--")+"</strong></td>";
 }
 html+="<tr class='piti'><td class='lbl'>Est. PITI / Month</td>"+pc+"</tr>";
 tbody.innerHTML=html;
+renderSumVis("c40",opts,tax,ins,pmiS,0);
 })();
 }</script></body></html>

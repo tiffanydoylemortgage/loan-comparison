@@ -536,6 +536,7 @@ pc+="<td><strong>"+(opts[c].r>0?fmtd(piti):"--")+"</strong></td>";
 }
 html+="<tr class='piti'><td class='lbl'>Est. PITI / Month</td>"+pc+"</tr>";
 tbody.innerHTML=html;
+renderSumVis("fa40",opts,tax,ins,pmiS,0);
 })();
 (function(){
 var pmiS=0;
@@ -564,6 +565,7 @@ pc+="<td><strong>"+(opts[c].r>0?fmtd(piti):"--")+"</strong></td>";
 }
 html+="<tr class='piti'><td class='lbl'>Est. PITI / Month</td>"+pc+"</tr>";
 tbody.innerHTML=html;
+renderSumVis("io40",opts,tax,ins,pmiS,0);
 })();
 (function(){
 var pmiS=0;
@@ -592,5 +594,6 @@ pc+="<td><strong>"+(opts[c].r>0?fmtd(piti):"--")+"</strong></td>";
 }
 html+="<tr class='piti'><td class='lbl'>Est. PITI / Month</td>"+pc+"</tr>";
 tbody.innerHTML=html;
+renderSumVis("arm40",opts,tax,ins,pmiS,0);
 })();
 }</script></body></html>
