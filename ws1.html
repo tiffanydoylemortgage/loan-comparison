@@ -106,9 +106,85 @@ body{font-family:'Barlow',sans-serif;background:var(--bg);color:var(--text);font
 #print-summary{display:none;}
 @media print{
   body > *{display:none!important;}
-  #print-summary{display:block!important;}
-  #print-summary .close-x{display:none!important;}
+  #print-summary{display:block!important;font-family:Arial,sans-serif;}
+  #print-summary .close-x,
   #print-summary .modal-actions{display:none!important;}
+
+  /* Force vis cards grid to render */
+  #print-summary .sum-vis-cards{
+    display:grid!important;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin:10px 0 14px 0;
+  }
+  #print-summary .sum-vc{
+    display:block!important;
+    border:2px solid #d0d8e8;
+    border-radius:6px;
+    padding:12px;
+    text-align:center;
+    background:#fff;
+  }
+  /* Green best option — explicit hex colors, no CSS variables */
+  #print-summary .sum-vc.best{
+    border:2px solid #1a5c3a!important;
+    background:#e8f5ee!important;
+  }
+  #print-summary .sum-best-badge{
+    display:none;
+  }
+  #print-summary .sum-vc.best .sum-best-badge{
+    display:inline-block!important;
+    background:#1a5c3a;
+    color:#fff;
+    font-size:9px;
+    font-weight:700;
+    text-transform:uppercase;
+    padding:2px 8px;
+    border-radius:10px;
+    margin-bottom:4px;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  #print-summary .svc-lbl{font-size:10px;font-weight:700;text-transform:uppercase;color:#5a6480;margin-bottom:3px;}
+  #print-summary .svc-rate{font-size:22px;font-weight:700;color:#001D50;display:block;}
+  #print-summary .svc-pts{font-size:11px;color:#5a6480;margin-bottom:3px;display:block;}
+  #print-summary .svc-pitia-lbl{font-size:10px;color:#5a6480;display:block;}
+  #print-summary .svc-pitia-val{font-size:19px;font-weight:700;color:#001D50;display:block;}
+  /* Best option text in green */
+  #print-summary .sum-vc.best .svc-rate,
+  #print-summary .sum-vc.best .svc-pitia-val{color:#1a5c3a!important;}
+  #print-summary .sum-vc.best .svc-lbl{color:#1a5c3a!important;}
+
+  /* Force table colors to print */
+  #print-summary .stbl th{
+    background:#001D50!important;
+    color:#fff!important;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  #print-summary .stbl th.opt{
+    background:#091643!important;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  #print-summary .stbl .piti td{
+    background:#001D50!important;
+    color:#fff!important;
+    font-weight:700;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  #print-summary .sum-sec h4{
+    background:#001D50!important;
+    color:#fff!important;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  /* Fix county double-name and % sign issues */
+  #print-summary .sum-client{border-bottom:2px solid #d0d8e8;margin-bottom:14px;padding-bottom:12px;}
+  #print-summary .modal-hdr{background:#001D50!important;color:#fff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  #print-summary .modal-foot{background:#091643!important;color:rgba(255,255,255,.7)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
 }
 @media(max-width:680px){
   .rate-grid,.vis-cards{grid-template-columns:1fr;}
@@ -399,7 +475,7 @@ var loan=pp-dp;var ti=getTaxIns(pp,loan);var tax=ti.tax,ins=ti.ins;
 
 var sel=el("county"),cname=sel?sel.options[sel.selectedIndex].text.split("--")[0].split("—")[0].trim():"";
 sv("sum-client-name",gv("clientName")||"Client");
-sv("sum-details","Purchase Price: "+fmtd(pp)+"  ·  Down Payment: "+fmtd(dp)+" ("+fmtpct((dp/pp)*100)+"%)  ·  Loan Amount: "+fmtd(loan)+"  ·  "+cname+" County  ·  "+gv("today"));
+sv("sum-details","Purchase Price: "+fmtd(pp)+"  ·  Down Payment: "+fmtd(dp)+" ("+fmtpct((dp/pp)*100)+")  ·  Loan Amount: "+fmtd(loan)+"  ·  "+cname+"  ·  "+gv("today"));
 (function(){
 var pmiS=pa(gv("p1-pmi"));
 var opts=getOpts("p1",loan,30,false);
