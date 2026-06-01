@@ -370,24 +370,26 @@ function renderSumVis(pid,opts,tax,ins,pmi,hoa){
   var valid=[];
   for(var i=0;i<opts.length;i++){if(opts[i].r>0)valid.push(opts[i].pi+tax+ins+pmiAmt+hoaAmt);}
   var minP=valid.length?Math.min.apply(null,valid):0;
-  var html='';
+  var parts=[];
   for(var i=0;i<opts.length;i++){
     var o=opts[i];
     var piti=o.pi+tax+ins+pmiAmt+hoaAmt;
     var best=o.r>0&&piti===minP&&valid.length>1;
+    var cls=best?'sum-vc best':'sum-vc';
     var rStr=o.r>0?parseFloat(o.r.toFixed(3))+'%':'--';
     var pStr=o.pts>0?o.pts+'pts / '+fmtd(o.ptsDollar):'0 pts';
     var pitiStr=o.r>0?fmtd(piti):'--';
-    html+='<div class="sum-vc'+(best?' best':'')+'">'+
-      '<div class="sum-best-badge">Lowest PITI</div>'+
-      '<div class="svc-lbl">Option '+(i+1)+'</div>'+
-      '<div class="svc-rate">'+rStr+'</div>'+
-      '<div class="svc-pts">'+pStr+'</div>'+
-      '<div class="svc-pitia-lbl">Est. PITI</div>'+
-      '<div class="svc-pitia-val">'+pitiStr+'</div>'+
-    '</div>';
+    var card='<div class="'+cls+'">';
+    card+='<div class="sum-best-badge">Lowest PITI</div>';
+    card+='<div class="svc-lbl">Option '+(i+1)+'</div>';
+    card+='<div class="svc-rate">'+rStr+'</div>';
+    card+='<div class="svc-pts">'+pStr+'</div>';
+    card+='<div class="svc-pitia-lbl">Est. PITI</div>';
+    card+='<div class="svc-pitia-val">'+pitiStr+'</div>';
+    card+='</div>';
+    parts.push(card);
   }
-  vis.innerHTML=html;
+  vis.innerHTML=parts.join('');
 }
 
 function buildSummary(){
