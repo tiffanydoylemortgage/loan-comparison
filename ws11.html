@@ -283,29 +283,62 @@ body{font-family:'Barlow',sans-serif;background:var(--bg);color:var(--text);font
 .bd-ben .bb-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:#1a5c3a;margin-bottom:6px;line-height:1.3;}
 .bd-ben .bb-desc{font-size:11px;color:var(--muted);line-height:1.5;}
 
-/* ── PRINT: force all colors ── */
 #print-summary{display:none;}
 @media print{
+  /* Hide everything except the infographic */
   body > *{display:none!important;}
-  #print-summary{display:block!important;}
-  #print-summary .close-x,#print-summary .modal-actions{display:none!important;}
-  #print-summary *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;}
-  #print-summary .modal-hdr{background:#001D50!important;color:#fff!important;}
-  #print-summary .stbl th{background:#001D50!important;color:#fff!important;}
-  #print-summary .stbl th.opt{background:#091643!important;}
-  #print-summary .stbl .piti td{background:#001D50!important;color:#fff!important;font-weight:700;}
-  #print-summary .sum-sec h4{background:#001D50!important;color:#fff!important;}
-  /* Year card headers */
-  #print-summary .print-yr-hdr-1{background:#1a5c3a!important;color:#fff!important;}
-  #print-summary .print-yr-hdr-2{background:#1d5fa8!important;color:#fff!important;}
-  #print-summary .print-yr-hdr-3{background:#001D50!important;color:#fff!important;}
-  #print-summary .print-yr-hdr-4{background:#091643!important;color:#fff!important;}
-  /* Savings boxes */
-  #print-summary .print-sav-buyer{background:#e8f5ee!important;border:2px solid #1a5c3a!important;}
-  #print-summary .print-sav-seller{background:#e8edf5!important;border:2px solid #001D50!important;}
+  #bd-print-content{display:block!important;}
+
+  /* Show the client header when printing */
+  #bd-print-header{display:block!important;}
+
+  /* Force all colors to print */
+  #bd-print-content *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;}
+
   /* Hero */
-  #print-summary .print-hero{background:#001D50!important;color:#fff!important;}
-  #print-summary .print-yr4-band{background:#091643!important;color:#fff!important;}
+  #bd-print-content .bd-hero{background:#001D50!important;}
+  #bd-print-content .bd-hero-left .bd-321 span{color:#4ade80!important;}
+  #bd-print-content .bd-hero-right .bd-tagline .green{color:#4ade80!important;}
+
+  /* Explain box */
+  #bd-print-content .bd-explain{background:#f0f7f2!important;border-color:#1a5c3a!important;}
+
+  /* Year column headers */
+  #bd-print-content .bd-yr-hdr.y1{background:#1a5c3a!important;color:#fff!important;}
+  #bd-print-content .bd-yr-hdr.y2{background:#1d5fa8!important;color:#fff!important;}
+  #bd-print-content .bd-yr-hdr.y3{background:#001D50!important;color:#fff!important;}
+
+  /* Year body backgrounds */
+  #bd-print-content .bd-yr-body{background:#fff!important;}
+  #bd-print-content .bd-pmt-box.y1{background:#e8f5ee!important;border-color:#1a5c3a!important;}
+  #bd-print-content .bd-pmt-box.y2{background:#e8f0fb!important;border-color:#1d5fa8!important;}
+  #bd-print-content .bd-pmt-box.y3{background:#e8edf5!important;border-color:#001D50!important;}
+  #bd-print-content .bd-pay-box{background:#f8f9fd!important;}
+
+  /* Year 4 band */
+  #bd-print-content .bd-yr4{background:#001D50!important;}
+
+  /* Savings boxes */
+  #bd-print-content .bd-sav-box.buyer{background:#e8f5ee!important;border-color:#1a5c3a!important;}
+  #bd-print-content .bd-sav-box.seller{background:#e8edf5!important;border-color:#001D50!important;}
+
+  /* Bar chart bars */
+  #bd-print-content .bdc-bar.b1{background:#1a5c3a!important;}
+  #bd-print-content .bdc-bar.b2{background:#1d5fa8!important;}
+  #bd-print-content .bdc-bar.b3{background:#001D50!important;opacity:.7!important;}
+  #bd-print-content .bdc-bar.b4{background:#001D50!important;}
+
+  /* Savings bars */
+  #bd-print-content .sbar-fill.s1{background:#1a5c3a!important;}
+  #bd-print-content .sbar-fill.s2{background:#1d5fa8!important;}
+  #bd-print-content .sbar-fill.s3{background:#001D50!important;}
+  #bd-print-content .sbar-track{background:#f0f2f8!important;}
+
+  /* Benefits section */
+  #bd-print-content .bd-ben .bb-icon{background:#e8f5ee!important;}
+
+  /* Disc */
+  #bd-print-content .disc{background:#091643!important;color:rgba(255,255,255,.7)!important;}
 }
 
 @media(max-width:680px){
@@ -343,7 +376,13 @@ body{font-family:'Barlow',sans-serif;background:var(--bg);color:var(--text);font
 <option value="977500">Sonoma County &mdash; $977,500 </option>
 <option value="832750">Stanislaus County &mdash; $832,750 </option>
 <option value="1027500">Ventura County &mdash; $1,027,500 </option>
-<option value="832750">Yolo County &mdash; $832,750 </option></select></div><div class="ig"><label>Purchase Price</label><input type="text" id="pp" value="$750,000" oninput="calculate()"/></div><div class="ig"><label>Down Payment</label><input type="text" id="dp" value="20%" oninput="calculate()"/></div><div class="ig"><label>Note Rate (%)</label><input type="text" id="noteRate" placeholder="e.g. 7.25" oninput="calculate()" style="width:115px;"/></div><div class="ig"><label>Loan Program</label><input type="text" id="loanProgram" placeholder="e.g. 30yr Fixed Conv." oninput="calculate()" style="width:160px;"/></div></div><div class="inp-panel" style="border-top:1px solid var(--border);padding-top:10px;"><div class="ig"><label>Insurance / mo</label><input type="text" id="ins-mo" placeholder="e.g. 150" oninput="calculate()" style="width:130px;"/></div><div class="ig"><label>Property Tax / mo</label><input type="text" id="tax-mo" placeholder="e.g. 781" oninput="calculate()" style="width:130px;"/></div><div class="ig"><label>MI / mo</label><input type="text" id="mi-mo" placeholder="0 if none" oninput="calculate()" style="width:110px;"/></div><div class="ig"><label>HOA / mo</label><input type="text" id="hoa-mo" placeholder="0 if none" oninput="calculate()" style="width:110px;"/></div><div class="ig"><label>Date</label><input type="text" id="today" style="width:140px;" placeholder="e.g. Jun 10, 2026"/></div></div><div class="c-banner"><span id="c-banner-txt"></span></div><div class="bd-wrap">
+<option value="832750">Yolo County &mdash; $832,750 </option></select></div><div class="ig"><label>Purchase Price</label><input type="text" id="pp" value="$750,000" oninput="calculate()"/></div><div class="ig"><label>Down Payment</label><input type="text" id="dp" value="20%" oninput="calculate()"/></div><div class="ig"><label>Note Rate (%)</label><input type="text" id="noteRate" placeholder="e.g. 7.25" oninput="calculate()" style="width:115px;"/></div><div class="ig"><label>Loan Program</label><input type="text" id="loanProgram" placeholder="e.g. 30yr Fixed Conv." oninput="calculate()" style="width:160px;"/></div></div><div class="inp-panel" style="border-top:1px solid var(--border);padding-top:10px;"><div class="ig"><label>Insurance / mo</label><input type="text" id="ins-mo" placeholder="e.g. 150" oninput="calculate()" style="width:130px;"/></div><div class="ig"><label>Property Tax / mo</label><input type="text" id="tax-mo" placeholder="e.g. 781" oninput="calculate()" style="width:130px;"/></div><div class="ig"><label>MI / mo</label><input type="text" id="mi-mo" placeholder="0 if none" oninput="calculate()" style="width:110px;"/></div><div class="ig"><label>HOA / mo</label><input type="text" id="hoa-mo" placeholder="0 if none" oninput="calculate()" style="width:110px;"/></div><div class="ig"><label>Date</label><input type="text" id="today" style="width:140px;" placeholder="e.g. Jun 10, 2026"/></div></div><div class="c-banner"><span id="c-banner-txt"></span></div><div class="bd-wrap" id="bd-print-content"><div id="bd-print-header" style="display:none;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;padding-bottom:12px;border-bottom:2px solid #001D50;">
+    <div><div style="font-family:Barlow Condensed,sans-serif;font-size:22px;font-weight:700;color:#001D50;" id="bph-client">Client</div><div style="font-size:11px;color:#5a6480;margin-top:3px;" id="bph-details"></div></div>
+    <div style="text-align:right;font-size:11px;color:#5a6480;line-height:1.8;">Tiffany Doyle &nbsp;|&nbsp; NMLS# 236890<br>408.607.9421 &nbsp;|&nbsp; 669.321.5551<br>Tiffany.Doyle@nafinc.com</div>
+  </div>
+</div>
+
   <div class="bd-hero"><div class="bd-hero-inner">
     <div class="bd-hero-left"><div class="bd-321"><span>3-2-1</span></div><div class="bd-buydown">Buydown</div></div>
     <div class="bd-hero-icon">&#127968;</div>
@@ -672,9 +711,13 @@ function showSummary(){
 }
 function closeSummaryModal(){var m=el('summary-modal');if(m)m.classList.remove('open');}
 function printSummary(){
-  var inner=el('summary-modal-inner');
-  var pd=el('print-summary');
-  if(inner&&pd)pd.innerHTML=inner.innerHTML;
+  var pp=pa(gv('pp')); var dpR=gv('dp');
+  var dp=dpR.indexOf('%')>=0?pp*pa(dpR)/100:pa(dpR);
+  var loan=pp-dp;
+  var prog=gv('loanProgram')||'--';
+  var sel=el('county'),cname=sel?sel.options[sel.selectedIndex].text.split('--')[0].split('—')[0].trim():'';
+  sv('bph-client',gv('clientName')||'Client');
+  sv('bph-details','Purchase Price: '+fmtd(pp)+'  ·  Down: '+fmtd(dp)+'  ·  Loan: '+fmtd(loan)+'  ·  '+prog+'  ·  '+cname+'  ·  '+gv('today'));
   window.print();
 }
 document.addEventListener('DOMContentLoaded',function(){
