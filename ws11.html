@@ -285,60 +285,60 @@ body{font-family:'Barlow',sans-serif;background:var(--bg);color:var(--text);font
 
 #print-summary{display:none;}
 @media print{
-  /* Hide everything except the infographic */
+  /* Hide everything except print-summary (direct child of body) */
   body > *{display:none!important;}
-  #bd-print-content{display:block!important;}
+  #print-summary{display:block!important;}
 
   /* Show the client header when printing */
-  #bd-print-header{display:block!important;}
+  #print-summary #bd-print-header{display:block!important;}
 
   /* Force all colors to print */
-  #bd-print-content *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;}
+  #print-summary *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;}
 
   /* Hero */
-  #bd-print-content .bd-hero{background:#001D50!important;}
-  #bd-print-content .bd-hero-left .bd-321 span{color:#4ade80!important;}
-  #bd-print-content .bd-hero-right .bd-tagline .green{color:#4ade80!important;}
+  #print-summary .bd-hero{background:#001D50!important;}
+  #print-summary .bd-hero-left .bd-321 span{color:#4ade80!important;}
+  #print-summary .bd-hero-right .bd-tagline .green{color:#4ade80!important;}
 
   /* Explain box */
-  #bd-print-content .bd-explain{background:#f0f7f2!important;border-color:#1a5c3a!important;}
+  #print-summary .bd-explain{background:#f0f7f2!important;border-color:#1a5c3a!important;}
 
   /* Year column headers */
-  #bd-print-content .bd-yr-hdr.y1{background:#1a5c3a!important;color:#fff!important;}
-  #bd-print-content .bd-yr-hdr.y2{background:#1d5fa8!important;color:#fff!important;}
-  #bd-print-content .bd-yr-hdr.y3{background:#001D50!important;color:#fff!important;}
+  #print-summary .bd-yr-hdr.y1{background:#1a5c3a!important;color:#fff!important;}
+  #print-summary .bd-yr-hdr.y2{background:#1d5fa8!important;color:#fff!important;}
+  #print-summary .bd-yr-hdr.y3{background:#001D50!important;color:#fff!important;}
 
   /* Year body backgrounds */
-  #bd-print-content .bd-yr-body{background:#fff!important;}
-  #bd-print-content .bd-pmt-box.y1{background:#e8f5ee!important;border-color:#1a5c3a!important;}
-  #bd-print-content .bd-pmt-box.y2{background:#e8f0fb!important;border-color:#1d5fa8!important;}
-  #bd-print-content .bd-pmt-box.y3{background:#e8edf5!important;border-color:#001D50!important;}
-  #bd-print-content .bd-pay-box{background:#f8f9fd!important;}
+  #print-summary .bd-yr-body{background:#fff!important;}
+  #print-summary .bd-pmt-box.y1{background:#e8f5ee!important;border-color:#1a5c3a!important;}
+  #print-summary .bd-pmt-box.y2{background:#e8f0fb!important;border-color:#1d5fa8!important;}
+  #print-summary .bd-pmt-box.y3{background:#e8edf5!important;border-color:#001D50!important;}
+  #print-summary .bd-pay-box{background:#f8f9fd!important;}
 
   /* Year 4 band */
-  #bd-print-content .bd-yr4{background:#001D50!important;}
+  #print-summary .bd-yr4{background:#001D50!important;}
 
   /* Savings boxes */
-  #bd-print-content .bd-sav-box.buyer{background:#e8f5ee!important;border-color:#1a5c3a!important;}
-  #bd-print-content .bd-sav-box.seller{background:#e8edf5!important;border-color:#001D50!important;}
+  #print-summary .bd-sav-box.buyer{background:#e8f5ee!important;border-color:#1a5c3a!important;}
+  #print-summary .bd-sav-box.seller{background:#e8edf5!important;border-color:#001D50!important;}
 
   /* Bar chart bars */
-  #bd-print-content .bdc-bar.b1{background:#1a5c3a!important;}
-  #bd-print-content .bdc-bar.b2{background:#1d5fa8!important;}
-  #bd-print-content .bdc-bar.b3{background:#001D50!important;opacity:.7!important;}
-  #bd-print-content .bdc-bar.b4{background:#001D50!important;}
+  #print-summary .bdc-bar.b1{background:#1a5c3a!important;}
+  #print-summary .bdc-bar.b2{background:#1d5fa8!important;}
+  #print-summary .bdc-bar.b3{background:#001D50!important;opacity:.7!important;}
+  #print-summary .bdc-bar.b4{background:#001D50!important;}
 
   /* Savings bars */
-  #bd-print-content .sbar-fill.s1{background:#1a5c3a!important;}
-  #bd-print-content .sbar-fill.s2{background:#1d5fa8!important;}
-  #bd-print-content .sbar-fill.s3{background:#001D50!important;}
-  #bd-print-content .sbar-track{background:#f0f2f8!important;}
+  #print-summary .sbar-fill.s1{background:#1a5c3a!important;}
+  #print-summary .sbar-fill.s2{background:#1d5fa8!important;}
+  #print-summary .sbar-fill.s3{background:#001D50!important;}
+  #print-summary .sbar-track{background:#f0f2f8!important;}
 
   /* Benefits section */
-  #bd-print-content .bd-ben .bb-icon{background:#e8f5ee!important;}
+  #print-summary .bd-ben .bb-icon{background:#e8f5ee!important;}
 
   /* Disc */
-  #bd-print-content .disc{background:#091643!important;color:rgba(255,255,255,.7)!important;}
+  #print-summary .disc{background:#091643!important;color:rgba(255,255,255,.7)!important;}
 }
 
 @media(max-width:680px){
@@ -718,6 +718,9 @@ function printSummary(){
   var sel=el('county'),cname=sel?sel.options[sel.selectedIndex].text.split('--')[0].split('—')[0].trim():'';
   sv('bph-client',gv('clientName')||'Client');
   sv('bph-details','Purchase Price: '+fmtd(pp)+'  ·  Down: '+fmtd(dp)+'  ·  Loan: '+fmtd(loan)+'  ·  '+prog+'  ·  '+cname+'  ·  '+gv('today'));
+  var src=el('bd-print-content');
+  var dest=el('print-summary');
+  if(src&&dest){dest.innerHTML=src.innerHTML;}
   window.print();
 }
 document.addEventListener('DOMContentLoaded',function(){
