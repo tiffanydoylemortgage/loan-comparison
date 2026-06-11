@@ -798,13 +798,31 @@ function calculate(){
   var wt=el('ws-main-title'); if(wt)wt.textContent=cfg.label+' Seller Buydown';
   sv('yr4-title','Year '+(reds.length+1)+' and Beyond');
 
-  // Show/hide year columns
+  // Show/hide year columns and adjust grid
+  var grid=el('bd-years-grid');
   var col2=el('yr-col-2'); var col3=el('yr-col-3');
   var row2=el('sbar-row-2'); var row3=el('sbar-row-3');
-  if(col2){col2.style.display=reds.length>=2?'flex':'none';}
-  if(col3){col3.style.display=reds.length>=3?'flex':'none';}
+  if(reds.length===3){
+    if(grid)grid.style.gridTemplateColumns='repeat(3,1fr)';
+    if(col2)col2.style.display='flex';
+    if(col3)col3.style.display='flex';
+  } else if(reds.length===2){
+    if(grid)grid.style.gridTemplateColumns='repeat(2,1fr)';
+    if(col2)col2.style.display='flex';
+    if(col3)col3.style.display='none';
+  } else {
+    if(grid)grid.style.gridTemplateColumns='1fr';
+    if(col2)col2.style.display='none';
+    if(col3)col3.style.display='none';
+  }
   if(row2){row2.style.display=reds.length>=2?'flex':'none';}
   if(row3){row3.style.display=reds.length>=3?'flex':'none';}
+  var grid=el('bd-years-grid');
+  if(grid){
+    if(reds.length===3)grid.style.gridTemplateColumns='repeat(3,1fr)';
+    else if(reds.length===2)grid.style.gridTemplateColumns='repeat(2,1fr)';
+    else grid.style.gridTemplateColumns='1fr';
+  }
 
   // Update subheadings and pct labels
   var subLabels=[reds[0]+'% Below Market Rate', reds.length>=2?reds[1]+'% Below Market Rate':'', reds.length>=3?reds[2]+'% Below Market Rate':''];
@@ -1015,13 +1033,31 @@ function calculate(){
   var wt=el('ws-main-title'); if(wt)wt.textContent=cfg.label+' Seller Buydown';
   sv('yr4-title','Year '+(reds.length+1)+' and Beyond');
 
-  // Show/hide year columns
+  // Show/hide year columns and adjust grid
+  var grid=el('bd-years-grid');
   var col2=el('yr-col-2'); var col3=el('yr-col-3');
   var row2=el('sbar-row-2'); var row3=el('sbar-row-3');
-  if(col2){col2.style.display=reds.length>=2?'flex':'none';}
-  if(col3){col3.style.display=reds.length>=3?'flex':'none';}
+  if(reds.length===3){
+    if(grid)grid.style.gridTemplateColumns='repeat(3,1fr)';
+    if(col2)col2.style.display='flex';
+    if(col3)col3.style.display='flex';
+  } else if(reds.length===2){
+    if(grid)grid.style.gridTemplateColumns='repeat(2,1fr)';
+    if(col2)col2.style.display='flex';
+    if(col3)col3.style.display='none';
+  } else {
+    if(grid)grid.style.gridTemplateColumns='1fr';
+    if(col2)col2.style.display='none';
+    if(col3)col3.style.display='none';
+  }
   if(row2){row2.style.display=reds.length>=2?'flex':'none';}
   if(row3){row3.style.display=reds.length>=3?'flex':'none';}
+  var grid=el('bd-years-grid');
+  if(grid){
+    if(reds.length===3)grid.style.gridTemplateColumns='repeat(3,1fr)';
+    else if(reds.length===2)grid.style.gridTemplateColumns='repeat(2,1fr)';
+    else grid.style.gridTemplateColumns='1fr';
+  }
 
   // Update subheadings and pct labels
   var subLabels=[reds[0]+'% Below Market Rate', reds.length>=2?reds[1]+'% Below Market Rate':'', reds.length>=3?reds[2]+'% Below Market Rate':''];
