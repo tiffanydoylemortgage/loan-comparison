@@ -104,87 +104,67 @@ body{font-family:'Barlow',sans-serif;background:var(--bg);color:var(--text);font
 .disc{background:var(--dark);color:rgba(255,255,255,.6);padding:10px 20px;font-size:10px;line-height:1.6;}
 .disc strong{color:rgba(255,255,255,.85);}
 #print-summary{display:none;}
+@page{margin:.25in .3in .25in .3in;}
 @media print{
-  body > *{display:none!important;}
-  #print-summary{display:block!important;font-family:Arial,sans-serif;}
-  #print-summary .close-x,
-  #print-summary .modal-actions{display:none!important;}
-
-  /* Force vis cards grid to render */
-  #print-summary .sum-vis-cards{
-    display:grid!important;
-    grid-template-columns:repeat(3,1fr);
-    gap:10px;
-    margin:10px 0 14px 0;
-  }
-  #print-summary .sum-vc{
-    display:block!important;
-    border:2px solid #d0d8e8;
-    border-radius:6px;
-    padding:12px;
-    text-align:center;
-    background:#fff;
-  }
-  /* Green best option — explicit hex colors, no CSS variables */
-  #print-summary .sum-vc.best{
-    border:2px solid #1a5c3a!important;
-    background:#e8f5ee!important;
-  }
-  #print-summary .sum-best-badge{
-    display:none;
-  }
-  #print-summary .sum-vc.best .sum-best-badge{
-    display:inline-block!important;
-    background:#1a5c3a;
-    color:#fff;
-    font-size:9px;
-    font-weight:700;
-    text-transform:uppercase;
-    padding:2px 8px;
-    border-radius:10px;
-    margin-bottom:4px;
-    -webkit-print-color-adjust:exact;
-    print-color-adjust:exact;
-  }
-  #print-summary .svc-lbl{font-size:10px;font-weight:700;text-transform:uppercase;color:#5a6480;margin-bottom:3px;}
-  #print-summary .svc-rate{font-size:22px;font-weight:700;color:#001D50;display:block;}
-  #print-summary .svc-pts{font-size:11px;color:#5a6480;margin-bottom:3px;display:block;}
-  #print-summary .svc-pitia-lbl{font-size:10px;color:#5a6480;display:block;}
-  #print-summary .svc-pitia-val{font-size:19px;font-weight:700;color:#001D50;display:block;}
-  /* Best option text in green */
-  #print-summary .sum-vc.best .svc-rate,
-  #print-summary .sum-vc.best .svc-pitia-val{color:#1a5c3a!important;}
-  #print-summary .sum-vc.best .svc-lbl{color:#1a5c3a!important;}
-
-  /* Force table colors to print */
-  #print-summary .stbl th{
-    background:#001D50!important;
-    color:#fff!important;
-    -webkit-print-color-adjust:exact;
-    print-color-adjust:exact;
-  }
-  #print-summary .stbl th.opt{
-    background:#091643!important;
-    -webkit-print-color-adjust:exact;
-    print-color-adjust:exact;
-  }
-  #print-summary .stbl .piti td{
-    background:#001D50!important;
-    color:#fff!important;
-    font-weight:700;
-    -webkit-print-color-adjust:exact;
-    print-color-adjust:exact;
-  }
-  #print-summary .sum-sec h4{
-    background:#001D50!important;
-    color:#fff!important;
-    -webkit-print-color-adjust:exact;
-    print-color-adjust:exact;
-  }
-  /* Fix county double-name and % sign issues */
-  #print-summary .sum-client{border-bottom:2px solid #d0d8e8;margin-bottom:14px;padding-bottom:12px;}
-  #print-summary .modal-hdr{background:#001D50!important;color:#fff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-  #print-summary .modal-foot{background:#091643!important;color:rgba(255,255,255,.7)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .hdr,.home-bar,.toolbar,.inp-panel,.c-banner,.disc,.modal,
+  #print-summary,#save-modal,#load-modal{display:none!important;}
+  body{background:#fff!important;margin:0;padding:0;}
+  .bd-wrap{display:block!important;max-width:100%!important;padding:4px 8px!important;}
+  #bd-print-header{display:flex!important;justify-content:space-between;align-items:flex-start;
+    margin-bottom:8px;padding-bottom:6px;border-bottom:2px solid #001D50;}
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;}
+  /* Layout compactness */
+  .bd-hero{background:#001D50!important;margin-bottom:8px!important;}
+  .bd-hero-inner{padding:12px 18px!important;}
+  .bd-hero-left .bd-321{font-size:40px!important;}
+  .bd-hero-left .bd-buydown{font-size:34px!important;}
+  .bd-hero-house svg{width:88px!important;height:73px!important;}
+  .bd-hero-right .bd-tagline{font-size:16px!important;}
+  .bd-explain{background:#f0f7f2!important;border-color:#1a5c3a!important;padding:8px 12px!important;margin-bottom:8px!important;}
+  .bd-explain p{font-size:11px!important;}
+  .bd-explain-house svg{width:42px!important;height:36px!important;}
+  .bd-yr-hdr.y1{background:#1a5c3a!important;color:#fff!important;padding:8px 10px!important;}
+  .bd-yr-hdr.y2{background:#1d5fa8!important;color:#fff!important;padding:8px 10px!important;}
+  .bd-yr-hdr.y3{background:#001D50!important;color:#fff!important;padding:8px 10px!important;}
+  .bd-yr-hdr .yh-title{font-size:16px!important;}
+  .bd-yr-hdr .yh-sub{font-size:10px!important;}
+  .bd-yr-body{background:#fff!important;padding:8px!important;gap:6px!important;}
+  .bd-rate-box{padding:3px!important;}
+  .bd-rate-label{font-size:9px!important;margin-bottom:2px!important;}
+  .bd-rate-num{font-size:28px!important;}
+  .bd-arrow-svg{width:18px!important;height:20px!important;}
+  .bd-cal-row{background:#f8f9fd!important;padding:5px 7px!important;}
+  .bd-cal-icon svg{width:28px!important;height:28px!important;}
+  .bd-cal-text{font-size:10px!important;}
+  .bd-pmt-box.y1{background:#e8f5ee!important;border-color:#1a5c3a!important;padding:7px!important;}
+  .bd-pmt-box.y2{background:#e8f0fb!important;border-color:#1d5fa8!important;padding:7px!important;}
+  .bd-pmt-box.y3{background:#e8edf5!important;border-color:#001D50!important;padding:7px!important;}
+  .bd-pmt-lbl{font-size:8px!important;}
+  .bd-pmt-amt{font-size:22px!important;}
+  .bd-pmt-sub{font-size:9px!important;}
+  .bd-pmt-save{font-size:9px!important;margin-top:2px!important;}
+  .bd-yr4{background:#001D50!important;padding:10px 14px!important;margin-bottom:10px!important;}
+  .bd-yr4-house svg{width:42px!important;height:36px!important;}
+  .bd-yr4-title{font-size:17px!important;}
+  .bd-yr4-sub,.bd-yr4-desc{font-size:11px!important;}
+  .y4-amt{font-size:26px!important;}
+  .bd-sav-box.buyer{background:#e8f5ee!important;border-color:#1a5c3a!important;padding:7px 12px!important;}
+  .bd-sav-box.seller{background:#e8edf5!important;border-color:#001D50!important;padding:7px 12px!important;}
+  .bd-savings{gap:8px!important;margin-bottom:10px!important;}
+  .bs-svg{display:none!important;}
+  .bs-amt{font-size:22px!important;}
+  .bs-lbl{font-size:9px!important;}
+  .bs-sub{font-size:9px!important;}
+  .bd-sav-bars{border:1px solid #d0d8e8!important;padding:8px 12px!important;margin-bottom:0!important;}
+  .bd-sav-bars h3{font-size:9px!important;margin-bottom:6px!important;padding-bottom:4px!important;}
+  .sbar{margin-bottom:5px!important;}
+  .sbar-track{background:#f0f2f8!important;height:15px!important;}
+  .sbar-fill.s1{background:#1a5c3a!important;}
+  .sbar-fill.s2{background:#1d5fa8!important;}
+  .sbar-fill.s3{background:#001D50!important;}
+  .sbar-fill-lbl{font-size:9px!important;}
+  .sbar-lbl{font-size:10px!important;}
+  .sbar-val{font-size:10px!important;}
 }
 @media(max-width:680px){
   .rate-grid,.vis-cards{grid-template-columns:1fr;}
@@ -200,7 +180,7 @@ body{font-family:'Barlow',sans-serif;background:var(--bg);color:var(--text);font
 .bd-wrap{max-width:900px;margin:0 auto;padding:16px 20px;}
 
 /* ── HERO ── */
-.bd-hero{background:var(--navy);border-radius:var(--r);overflow:hidden;margin-bottom:12px;}
+.bd-hero{background:var(--navy);border-radius:var(--r);overflow:hidden;margin-bottom:16px;}
 .bd-hero-inner{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:20px;padding:20px 28px;}
 .bd-hero-left .bd-321{font-family:'Barlow Condensed',sans-serif;font-size:52px;font-weight:700;color:#fff;line-height:.9;letter-spacing:-1px;}
 .bd-hero-left .bd-321 span{color:#4ade80;}
@@ -210,7 +190,7 @@ body{font-family:'Barlow',sans-serif;background:var(--bg);color:var(--text);font
 .bd-hero-right .bd-tagline .green{color:#4ade80;} .bd-hero-right .bd-tagline .white{color:#fff;}
 
 /* ── EXPLAIN ── */
-.bd-explain{background:#f0f7f2;border:2px solid #1a5c3a;border-radius:var(--r);padding:10px 14px;margin-bottom:12px;display:flex;align-items:center;gap:14px;}
+.bd-explain{background:#f0f7f2;border:2px solid #1a5c3a;border-radius:var(--r);padding:14px 18px;margin-bottom:16px;display:flex;align-items:center;gap:16px;}
 .bd-explain-house{flex-shrink:0;}
 .bd-explain p{font-size:13px;line-height:1.65;color:var(--text);}
 .bd-explain p strong{color:var(--navy);}
@@ -268,16 +248,16 @@ body{font-family:'Barlow',sans-serif;background:var(--bg);color:var(--text);font
 .bd-yr4-pmt .y4-sub{font-size:10px;color:rgba(255,255,255,.6);}
 
 /* ── SAVINGS BOXES ── */
-.bd-savings{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;}
-.bd-sav-box{border-radius:var(--r);padding:10px 14px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:3px;}
+.bd-savings{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;}
+.bd-sav-box{border-radius:var(--r);padding:16px 18px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px;}
 .bd-sav-box.buyer{background:#e8f5ee;border:2px solid #1a5c3a;}
 .bd-sav-box.seller{background:#e8edf5;border:2px solid var(--navy);}
-.bd-sav-box .bs-svg{display:none;}
+.bd-sav-box .bs-svg{margin-bottom:2px;}
 .bd-sav-box .bs-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;}
 .bd-sav-box.buyer .bs-lbl{color:#1a5c3a;} .bd-sav-box.seller .bs-lbl{color:var(--navy);}
-.bd-sav-box .bs-amt{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;}
+.bd-sav-box .bs-amt{font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:700;}
 .bd-sav-box.buyer .bs-amt{color:#1a5c3a;} .bd-sav-box.seller .bs-amt{color:var(--navy);}
-.bd-sav-box .bs-sub{font-size:10px;color:var(--muted);}
+.bd-sav-box .bs-sub{font-size:11px;color:var(--muted);}
 
 /* ── CHARTS ── */
 .bd-bar-chart{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;margin-bottom:16px;}
@@ -289,9 +269,9 @@ body{font-family:'Barlow',sans-serif;background:var(--bg);color:var(--text);font
 .bdc-bar.b1{background:#1a5c3a;} .bdc-bar.b2{background:#1d5fa8;} .bdc-bar.b3{background:var(--navy);opacity:.7;} .bdc-bar.b4{background:var(--navy);}
 .bdc-amt{font-size:10px;font-weight:700;color:var(--text);text-align:center;white-space:nowrap;}
 .bdc-lbl{font-size:10px;color:var(--muted);text-align:center;font-weight:600;}
-.bd-sav-bars{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:12px 16px;margin-bottom:12px;}
-.bd-sav-bars h3{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
-.sbar{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.bd-sav-bars{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;margin-bottom:16px;}
+.bd-sav-bars h3{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border);}
+.sbar{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
 .sbar:last-child{margin-bottom:0;}
 .sbar-lbl{width:55px;font-size:11px;font-weight:700;color:var(--text);flex-shrink:0;}
 .sbar-track{flex:1;background:#f0f2f8;border-radius:20px;height:22px;overflow:hidden;}
@@ -388,24 +368,24 @@ body{font-family:'Barlow',sans-serif;background:var(--bg);color:var(--text);font
   <rect x="0" y="80" width="120" height="8" fill="#2d7a40"/>
   <!-- House body -->
   <rect x="15" y="48" width="90" height="38" fill="#e8edf5"/>
-  <rect x="15" y="48" width="90" height="38" fill="none" stroke="#001D50" stroke-width="1.5"/>
-  <!-- Roof -->
-  <polygon points="10,50 60,12 110,50" fill="#001D50"/>
-  <polygon points="10,50 60,12 110,50" fill="none" stroke="#091643" stroke-width="1"/>
-  <!-- Chimney -->
-  <rect x="72" y="18" width="10" height="18" fill="#091643"/>
+  <rect x="15" y="48" width="90" height="38" fill="none" stroke="#c0cce0" stroke-width="1.5"/>
+  <!-- Roof — white with subtle outline so it shows on navy background -->
+  <polygon points="10,50 60,12 110,50" fill="#ffffff"/>
+  <polygon points="10,50 60,12 110,50" fill="none" stroke="#c0cce0" stroke-width="1.5"/>
+  <!-- Chimney — mid grey so visible against white roof -->
+  <rect x="72" y="18" width="10" height="18" fill="#7a90b0"/>
   <!-- Door -->
   <rect x="48" y="60" width="24" height="26" fill="#4ade80" rx="2"/>
-  <circle cx="68" cy="73" r="2" fill="#001D50"/>
+  <circle cx="68" cy="73" r="2" fill="#1a4a2a"/>
   <!-- Windows -->
   <rect x="20" y="55" width="18" height="16" fill="#a8c4e8" rx="1"/>
-  <rect x="20" y="55" width="18" height="16" fill="none" stroke="#001D50" stroke-width="1"/>
-  <line x1="29" y1="55" x2="29" y2="71" stroke="#001D50" stroke-width=".8"/>
-  <line x1="20" y1="63" x2="38" y2="63" stroke="#001D50" stroke-width=".8"/>
+  <rect x="20" y="55" width="18" height="16" fill="none" stroke="#7a90b0" stroke-width="1"/>
+  <line x1="29" y1="55" x2="29" y2="71" stroke="#7a90b0" stroke-width=".8"/>
+  <line x1="20" y1="63" x2="38" y2="63" stroke="#7a90b0" stroke-width=".8"/>
   <rect x="82" y="55" width="18" height="16" fill="#a8c4e8" rx="1"/>
-  <rect x="82" y="55" width="18" height="16" fill="none" stroke="#001D50" stroke-width="1"/>
-  <line x1="91" y1="55" x2="91" y2="71" stroke="#001D50" stroke-width=".8"/>
-  <line x1="82" y1="63" x2="100" y2="63" stroke="#001D50" stroke-width=".8"/>
+  <rect x="82" y="55" width="18" height="16" fill="none" stroke="#7a90b0" stroke-width="1"/>
+  <line x1="91" y1="55" x2="91" y2="71" stroke="#7a90b0" stroke-width=".8"/>
+  <line x1="82" y1="63" x2="100" y2="63" stroke="#7a90b0" stroke-width=".8"/>
   <!-- Tree -->
   <rect x="4" y="62" width="4" height="20" fill="#5a3a1a"/>
   <ellipse cx="6" cy="58" rx="9" ry="10" fill="#2d7a40"/>
@@ -467,18 +447,9 @@ body{font-family:'Barlow',sans-serif;background:var(--bg);color:var(--text);font
   <line x1="61" y1="38" x2="61" y2="48" stroke="#001D50" stroke-width=".6"/>
   <line x1="55" y1="43" x2="67" y2="43" stroke="#001D50" stroke-width=".6"/>
   <rect x="0" y="58" width="80" height="12" fill="#2d7a40" rx="1"/>
-</svg></div><div class="bd-yr4-mid"><div class="bd-yr4-title">Year 4 and Beyond</div><div class="bd-yr4-sub">Full Note Rate</div><div class="bd-yr4-desc">Starting in Year 4, your interest rate adjusts to the full note rate for the remainder of your loan.</div></div><div class="bd-yr4-pmt"><div class="y4-lbl">Est. Monthly Payment</div><div class="y4-amt" id="yr4-pmt">--</div><div class="y4-sub">Full note rate payment</div></div></div><div class="bd-savings"><div class="bd-sav-box buyer"><div class="bs-svg" style="color:#1a5c3a;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 52" width="52" height="44">
-  <ellipse cx="28" cy="30" rx="20" ry="16" fill="#1a5c3a" opacity=".9"/>
-  <circle cx="44" cy="24" rx="8" ry="7" fill="#1a5c3a"/>
-  <circle cx="46" cy="21" r="2.5" fill="#fff" opacity=".6"/>
-  <rect x="14" y="43" width="5" height="8" rx="2" fill="#1a5c3a"/>
-  <rect x="22" y="44" width="5" height="8" rx="2" fill="#1a5c3a"/>
-  <rect x="30" y="44" width="5" height="8" rx="2" fill="#1a5c3a"/>
-  <rect x="38" y="43" width="5" height="8" rx="2" fill="#1a5c3a"/>
-  <ellipse cx="42" cy="26" rx="2.5" ry="1.8" fill="#fff" opacity=".5"/>
-  <circle cx="22" cy="25" r="2.5" fill="#fff" opacity=".5"/>
-  <rect x="26" y="10" width="4" height="8" rx="2" fill="#1a5c3a"/>
-  <rect x="24" y="10" width="8" height="3" rx="1.5" fill="#1a5c3a"/>
+</svg></div><div class="bd-yr4-mid"><div class="bd-yr4-title">Year 4 and Beyond</div><div class="bd-yr4-sub">Full Note Rate</div><div class="bd-yr4-desc">Starting in Year 4, your interest rate adjusts to the full note rate for the remainder of your loan.</div></div><div class="bd-yr4-pmt"><div class="y4-lbl">Est. Monthly Payment</div><div class="y4-amt" id="yr4-pmt">--</div><div class="y4-sub">Full note rate payment</div></div></div><div class="bd-savings"><div class="bd-sav-box buyer"><div class="bs-svg" style="color:#1a5c3a;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" width="52" height="52">
+  <circle cx="28" cy="28" r="26" fill="#1a5c3a"/>
+  <text x="28" y="38" text-anchor="middle" font-size="34" font-weight="700" fill="#fff" font-family="Arial,sans-serif">$</text>
 </svg></div><div class="bs-lbl">Total Buyer Savings</div><div class="bs-amt" id="total-buyer">--</div><div class="bs-sub">Over 3 years vs. full note rate</div></div><div class="bd-sav-box seller"><div class="bs-svg" style="color:#001D50;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" width="44" height="44">
   <circle cx="20" cy="22" r="14" fill="none" stroke="#001D50" stroke-width="3"/>
   <circle cx="20" cy="22" r="8" fill="#001D50" opacity=".2"/>
