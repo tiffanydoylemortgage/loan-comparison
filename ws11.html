@@ -758,7 +758,13 @@ function printSummary(){
   var sel=el('county'),cname=sel?sel.options[sel.selectedIndex].text.split('--')[0].split('—')[0].trim():'';
   sv('bph-client',gv('clientName')||'Client');
   sv('bph-details','Purchase Price: '+fmtd(pp)+'  ·  Down Payment: '+fmtd(dp)+'  ·  Loan Amount: '+fmtd(loan)+'  ·  '+prog+'  ·  '+cname+'  ·  '+gv('today'));
+  var hdr=el('bd-print-header');
+  var modal=el('summary-modal');
+  if(hdr)hdr.style.display='flex';
+  if(modal)modal.style.display='none';
   window.print();
+  if(hdr)hdr.style.display='none';
+  if(modal)modal.style.display='';
 }
 function calculate(){
   var pp=pa(gv('pp')); var dpR=gv('dp');
