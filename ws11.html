@@ -428,7 +428,7 @@ body{font-family:'Barlow',sans-serif;background:var(--bg);color:var(--text);font
   <line x1="61" y1="38" x2="61" y2="48" stroke="#001D50" stroke-width=".6"/>
   <line x1="55" y1="43" x2="67" y2="43" stroke="#001D50" stroke-width=".6"/>
   <rect x="0" y="58" width="80" height="12" fill="#1a5c3a" rx="1"/>
-</svg></div><p>A <strong>3-2-1 buydown</strong> temporarily lowers your interest rate &mdash; and your monthly mortgage payment &mdash; during the first three years of your loan. The seller or builder funds the difference at closing. You always qualify at the full note rate.</p></div><div class="bd-years" id="bd-years-grid"><div class="bd-yr-col"><div class="bd-yr-hdr y1"><div class="yh-title">Year 1</div><div class="yh-sub" id="yr1-sub">3% Below Market Rate</div></div><div class="bd-yr-body"><div class="bd-rate-box"><div class="bd-rate-label">Interest Rate</div><div class="bd-rate-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 28" width="26" height="30"><path d="M12 2 L12 20 M5 13 L12 22 L19 13" stroke="#1a5c3a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><div class="bd-rate-num y1" id="yr1-rate">--</div></div></div><div class="bd-cal-row"><div class="bd-cal-icon" style="color:#1a5c3a;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" width="44" height="44">
+</svg></div><p>A <strong id="explain-type">3-2-1</strong><span id="explain-rest"> buydown temporarily lowers your interest rate &mdash; and your monthly mortgage payment &mdash; during the first three years of your loan. The seller or builder funds the difference at closing. You always qualify at the full note rate.</span></p></div><div class="bd-years" id="bd-years-grid"><div class="bd-yr-col"><div class="bd-yr-hdr y1"><div class="yh-title">Year 1</div><div class="yh-sub" id="yr1-sub">3% Below Market Rate</div></div><div class="bd-yr-body"><div class="bd-rate-box"><div class="bd-rate-label">Interest Rate</div><div class="bd-rate-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 28" width="26" height="30"><path d="M12 2 L12 20 M5 13 L12 22 L19 13" stroke="#1a5c3a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><div class="bd-rate-num y1" id="yr1-rate">--</div></div></div><div class="bd-cal-row"><div class="bd-cal-icon" style="color:#1a5c3a;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" width="44" height="44">
   <rect x="4" y="8" width="44" height="40" rx="4" fill="#fff" stroke="#1a5c3a" stroke-width="2"/>
   <rect x="4" y="8" width="44" height="14" rx="4" fill="#1a5c3a"/>
   <rect x="4" y="16" width="44" height="6" fill="#1a5c3a"/>
@@ -821,6 +821,10 @@ function calculate(){
   var t321=el('hero-321'); if(t321)t321.innerHTML='<span>'+cfg.label+'</span>';
   var wt=el('ws-main-title'); if(wt)wt.textContent=cfg.label+' Seller Buydown';
   sv('yr4-title','Year '+(reds.length+1)+' and Beyond');
+  var yrWords=['one year','two years','three years'][reds.length-1];
+  sv('explain-type',cfg.label);
+  var er=el('explain-rest');
+  if(er)er.textContent=' buydown temporarily lowers your interest rate \u2014 and your monthly mortgage payment \u2014 during the first '+yrWords+' of your loan. The seller or builder funds the difference at closing. You always qualify at the full note rate.';
 
   // Show/hide year columns and adjust grid
   var grid=el('bd-years-grid');
@@ -1056,6 +1060,10 @@ function calculate(){
   var t321=el('hero-321'); if(t321)t321.innerHTML='<span>'+cfg.label+'</span>';
   var wt=el('ws-main-title'); if(wt)wt.textContent=cfg.label+' Seller Buydown';
   sv('yr4-title','Year '+(reds.length+1)+' and Beyond');
+  var yrWords=['one year','two years','three years'][reds.length-1];
+  sv('explain-type',cfg.label);
+  var er=el('explain-rest');
+  if(er)er.textContent=' buydown temporarily lowers your interest rate \u2014 and your monthly mortgage payment \u2014 during the first '+yrWords+' of your loan. The seller or builder funds the difference at closing. You always qualify at the full note rate.';
 
   // Show/hide year columns and adjust grid
   var grid=el('bd-years-grid');
