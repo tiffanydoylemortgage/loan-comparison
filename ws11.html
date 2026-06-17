@@ -121,8 +121,6 @@ body{font-family:'Barlow',sans-serif;background:var(--bg);color:var(--text);font
   .bd-hero-house svg{width:88px!important;height:73px!important;}
   .bd-hero-right .bd-tagline{font-size:16px!important;}
   .bd-explain{background:#f0f7f2!important;border-color:#1a5c3a!important;padding:8px 12px!important;margin-bottom:8px!important;}
-  #fha-info-box{background:#fff7e6!important;border-color:#c98a1f!important;padding:8px 12px!important;margin-bottom:8px!important;}
-  #fha-info-text{font-size:11px!important;color:#7a5414!important;}
   .bd-explain p{font-size:11px!important;}
   .bd-explain-house svg{width:42px!important;height:36px!important;}
   .bd-yr-hdr.y1{background:#1a5c3a!important;color:#fff!important;padding:8px 10px!important;}
@@ -430,7 +428,7 @@ body{font-family:'Barlow',sans-serif;background:var(--bg);color:var(--text);font
   <line x1="61" y1="38" x2="61" y2="48" stroke="#001D50" stroke-width=".6"/>
   <line x1="55" y1="43" x2="67" y2="43" stroke="#001D50" stroke-width=".6"/>
   <rect x="0" y="58" width="80" height="12" fill="#1a5c3a" rx="1"/>
-</svg></div><p>A <strong id="explain-type">3-2-1</strong><span id="explain-rest"> buydown temporarily lowers your interest rate &mdash; and your monthly mortgage payment &mdash; during the first three years of your loan. The seller or builder funds the difference at closing. You always qualify at the full note rate.</span></p></div><div class="bd-explain" id="fha-info-box" style="display:none;background:#fff7e6;border-color:#c98a1f;"><div class="bd-explain-house" style="font-size:30px;line-height:1;">&#9432;</div><p id="fha-info-text" style="color:#7a5414;"></p></div><div class="bd-years" id="bd-years-grid"><div class="bd-yr-col"><div class="bd-yr-hdr y1"><div class="yh-title">Year 1</div><div class="yh-sub" id="yr1-sub">3% Below Market Rate</div></div><div class="bd-yr-body"><div class="bd-rate-box"><div class="bd-rate-label">Interest Rate</div><div class="bd-rate-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 28" width="26" height="30"><path d="M12 2 L12 20 M5 13 L12 22 L19 13" stroke="#1a5c3a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><div class="bd-rate-num y1" id="yr1-rate">--</div></div></div><div class="bd-cal-row"><div class="bd-cal-icon" style="color:#1a5c3a;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" width="44" height="44">
+</svg></div><p>A <strong id="explain-type">3-2-1</strong><span id="explain-rest"> buydown temporarily lowers your interest rate &mdash; and your monthly mortgage payment &mdash; during the first three years of your loan. The seller or builder funds the difference at closing. You always qualify at the full note rate.</span></p></div><div class="bd-years" id="bd-years-grid"><div class="bd-yr-col"><div class="bd-yr-hdr y1"><div class="yh-title">Year 1</div><div class="yh-sub" id="yr1-sub">3% Below Market Rate</div></div><div class="bd-yr-body"><div class="bd-rate-box"><div class="bd-rate-label">Interest Rate</div><div class="bd-rate-arrow-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 28" width="26" height="30"><path d="M12 2 L12 20 M5 13 L12 22 L19 13" stroke="#1a5c3a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><div class="bd-rate-num y1" id="yr1-rate">--</div></div></div><div class="bd-cal-row"><div class="bd-cal-icon" style="color:#1a5c3a;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" width="44" height="44">
   <rect x="4" y="8" width="44" height="40" rx="4" fill="#fff" stroke="#1a5c3a" stroke-width="2"/>
   <rect x="4" y="8" width="44" height="14" rx="4" fill="#1a5c3a"/>
   <rect x="4" y="16" width="44" height="6" fill="#1a5c3a"/>
@@ -738,15 +736,6 @@ function calculate(){
   var mi=pa(gv('mi-mo')); var hoa=pa(gv('hoa-mo')); var other=mi+hoa;
   var cfg=getBdConfig();
   var reds=cfg.reductions;
-
-  // FHA info box
-  var fhaBox=el('fha-info-box'); var fhaTxt=el('fha-info-text');
-  if(loanType==='fha'){
-    if(fhaBox)fhaBox.style.display='flex';
-    if(fhaTxt)fhaTxt.innerHTML='<strong>FHA Loan:</strong> Min. down payment 3.5% ('+fmtd(fhaMinDp)+'). Base loan '+fmtd(base)+' + Upfront MIP (1.75%) '+fmtd(ufmip)+' = <strong>Total FHA Loan '+fmtd(loan)+'</strong>. Monthly mortgage insurance entered manually below.';
-  } else {
-    if(fhaBox)fhaBox.style.display='none';
-  }
 
   // Update page labels
   var t321=el('hero-321'); if(t321)t321.innerHTML='<span>'+cfg.label+'</span>';
