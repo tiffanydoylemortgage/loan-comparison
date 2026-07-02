@@ -554,7 +554,8 @@ function buildSummary(){
   var dp=dpR.indexOf('%')>=0?pp*pa(dpR)/100:pa(dpR);
   var loan=pp-dp;
   var ti=getTaxIns(pp,loan);
-  var tax=ti.tax,ins=ti.ins;
+  var taxOv=pa(gv('tax-override')); var tax=taxOv>0?taxOv:ti.tax;
+  var insOv=pa(gv('ins-override')); var ins=insOv>0?insOv:ti.ins;
   var pmiS=pa(gv('s30-pmi'));
   var hoaS=pa(gv('hoa'));
   var sel=el('county');
