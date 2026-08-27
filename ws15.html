@@ -359,10 +359,10 @@ body{font-family:'Barlow',sans-serif;background:var(--bg);color:var(--text);font
 <option value="832750">Suffolk City &mdash; $832,750</option>
 <option value="832750">Virginia Beach City &mdash; $832,750</option>
 <option value="1249125">Warren County &mdash; $1,249,125</option>
-<option value="832750">York County &mdash; $832,750</option></optgroup></select></div><div class="ig"><label>Purchase Price</label><input type="text" id="pp" value="$550,000" oninput="calculate()"/></div><div class="ig"><label>Borrower Down Payment</label><input type="text" id="dp" value="0%" oninput="calculate()"/></div><div class="ig"><label>ZIP Assistance %</label><select id="zip-pct" onchange="calculate()" style="width:110px;"><option value="2">2%</option><option value="3" selected>3%</option></select></div></div><div class="inp-panel" style="border-top:1px solid var(--border);padding-top:10px;"><div class="ig"><label>CalHFA Conv. Rate (%) <span style="font-weight:400;text-transform:none;font-size:10px;color:#5a6480;">MyHome only</span></label><input type="text" id="myhome-rate" placeholder="e.g. 6.25" oninput="calculate()" style="width:150px;"/></div><div class="ig"><label>MyHome Points (%)</label><input type="text" id="myhome-pts" placeholder="e.g. 0.5" oninput="calculate()" style="width:120px;"/></div><div class="ig"><label>CalPLUS Conv. Rate (%) <span style="font-weight:400;text-transform:none;font-size:10px;color:#5a6480;">ZIP options</span></label><input type="text" id="zip-rate" placeholder="e.g. 6.625" oninput="calculate()" style="width:150px;"/></div><div class="ig"><label>ZIP Points (%)</label><input type="text" id="zip-pts" placeholder="e.g. 0.5" oninput="calculate()" style="width:120px;"/></div><div class="ig"><label>Ins / mo <span style="font-weight:400;text-transform:none;font-size:10px;color:#5a6480;">(optional)</span></label><input type="text" id="ins-override" placeholder="Auto (0.3%/yr)" oninput="calculate()" style="width:150px;"/></div><div class="ig"><label>Est. Closing Costs % <span style="font-weight:400;text-transform:none;font-size:10px;color:#5a6480;">of price</span></label><input type="text" id="cc-pct" value="2.5" oninput="calculate()" style="width:130px;"/></div></div><div class="inp-panel" style="border-top:2px solid var(--navy);padding-top:10px;"><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--navy);align-self:center;margin-right:6px;">Standard Conventional (No Assistance)</div><div class="ig"><label>Down Payment</label><input type="text" id="std-dp" value="10%" oninput="calculate()" style="width:130px;"/></div><div class="ig"><label>Standard Conv. Rate (%)</label><input type="text" id="std-rate" placeholder="e.g. 6.125" oninput="calculate()" style="width:150px;"/></div><div class="ig"><label>Standard Points (%)</label><input type="text" id="std-pts" placeholder="e.g. 0.5" oninput="calculate()" style="width:120px;"/></div><div class="ig"><label>CalHFA Monthly PMI ($) <span style="font-weight:400;text-transform:none;font-size:10px;color:#5a6480;">MyHome/ZIP/Combo</span></label><input type="text" id="mh-pmi" placeholder="e.g. 145" oninput="calculate()" style="width:170px;"/></div><div class="ig"><label>Standard Monthly PMI ($) <span style="font-weight:400;text-transform:none;font-size:10px;color:#5a6480;">0 if 20%+ down</span></label><input type="text" id="std-pmi" placeholder="e.g. 180 or 0" oninput="calculate()" style="width:180px;"/></div><div class="ig"><label>Date</label><input type="text" id="today" style="width:140px;" placeholder="e.g. Jun 25, 2026"/></div></div><div class="c-banner"><span id="c-banner-txt"></span></div><div style="padding:16px 20px;">
+<option value="832750">York County &mdash; $832,750</option></optgroup></select></div><div class="ig"><label>Purchase Price</label><input type="text" id="pp" value="$550,000" oninput="calculate()"/></div><div class="ig"><label>ZIP Assistance %</label><select id="zip-pct" onchange="calculate()" style="width:110px;"><option value="2">2%</option><option value="3" selected>3%</option></select></div><div class="ig"><label>CalHFA Min Down Payment %</label><input type="text" id="conv-min-dp" value="3" oninput="calculate()" style="width:150px;"/></div></div><div class="inp-panel" style="border-top:1px solid var(--border);padding-top:10px;"><div class="ig"><label>CalHFA Conv. Rate (%) <span style="font-weight:400;text-transform:none;font-size:10px;color:#5a6480;">MyHome only</span></label><input type="text" id="myhome-rate" placeholder="e.g. 6.25" oninput="calculate()" style="width:150px;"/></div><div class="ig"><label>MyHome Points (%)</label><input type="text" id="myhome-pts" placeholder="e.g. 0.5" oninput="calculate()" style="width:120px;"/></div><div class="ig"><label>CalPLUS Conv. Rate (%) <span style="font-weight:400;text-transform:none;font-size:10px;color:#5a6480;">ZIP options</span></label><input type="text" id="zip-rate" placeholder="e.g. 6.625" oninput="calculate()" style="width:150px;"/></div><div class="ig"><label>ZIP Points (%)</label><input type="text" id="zip-pts" placeholder="e.g. 0.5" oninput="calculate()" style="width:120px;"/></div><div class="ig"><label>Ins / mo <span style="font-weight:400;text-transform:none;font-size:10px;color:#5a6480;">(optional)</span></label><input type="text" id="ins-override" placeholder="Auto (0.3%/yr)" oninput="calculate()" style="width:150px;"/></div><div class="ig"><label>CalHFA Closing Costs % <span style="font-weight:400;text-transform:none;font-size:10px;color:#5a6480;">of price</span></label><input type="text" id="cc-pct" value="2" oninput="calculate()" style="width:130px;"/></div></div><div class="inp-panel" style="border-top:2px solid var(--navy);padding-top:10px;"><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--navy);align-self:center;margin-right:6px;">Standard Conventional (No Assistance)</div><div class="ig"><label>Down Payment</label><input type="text" id="std-dp" value="10%" oninput="calculate()" style="width:130px;"/></div><div class="ig"><label>Standard Conv. Rate (%)</label><input type="text" id="std-rate" placeholder="e.g. 6.125" oninput="calculate()" style="width:150px;"/></div><div class="ig"><label>Standard Points (%)</label><input type="text" id="std-pts" placeholder="e.g. 0.5" oninput="calculate()" style="width:120px;"/></div><div class="ig"><label>CalHFA Monthly PMI ($) <span style="font-weight:400;text-transform:none;font-size:10px;color:#5a6480;">MyHome/ZIP/Combo</span></label><input type="text" id="mh-pmi" placeholder="e.g. 145" oninput="calculate()" style="width:170px;"/></div><div class="ig"><label>Standard Monthly PMI ($) <span style="font-weight:400;text-transform:none;font-size:10px;color:#5a6480;">0 if 20%+ down</span></label><input type="text" id="std-pmi" placeholder="e.g. 180 or 0" oninput="calculate()" style="width:180px;"/></div><div class="ig"><label>Standard Closing Costs %</label><input type="text" id="std-cc-pct" value="2" oninput="calculate()" style="width:150px;"/></div><div class="ig"><label>Date</label><input type="text" id="today" style="width:140px;" placeholder="e.g. Jun 25, 2026"/></div></div><div class="c-banner"><span id="c-banner-txt"></span></div><div style="padding:16px 20px;">
 
 <div class="dpa-note-box">
-  <strong>How these programs work:</strong> MyHome is a deferred second loan (no monthly payment) that accrues <strong>1% simple interest</strong> per year, usable for down payment and/or closing costs, paired with a standard CalHFA Conventional first mortgage (up to 3% of purchase price). ZIP is a deferred second loan at <strong>0% interest</strong> for <strong>closing costs only</strong>, but requires the CalPLUS Conventional first mortgage &mdash; which typically carries a slightly higher note rate to fund the subsidy. Both are repaid only when the home is sold, refinanced, or the first mortgage is paid off. MyHome and ZIP can be combined for maximum assistance. Conventional loans with less than 20% down require monthly PMI.
+  <strong>How these programs work:</strong> MyHome is a deferred second loan (no monthly payment) that accrues <strong>1% simple interest</strong> per year, capped at up to 3% of purchase price, usable for down payment and/or closing costs. ZIP is a deferred second loan at <strong>0% interest</strong> for <strong>closing costs only</strong>, but requires the CalPLUS Conventional first mortgage &mdash; which typically carries a slightly higher note rate to fund the subsidy. The "CalHFA Min Down Payment %" field below reflects your investor’s actual minimum (commonly 3&ndash;5% depending on guidelines) &mdash; if it’s higher than MyHome’s 3% cap, the borrower covers the difference. Both DPA loans are repaid only when the home is sold, refinanced, or the first mortgage is paid off. Conventional loans with less than 20% down require monthly PMI.
 </div>
 
 <!-- DPA Program Cards -->
@@ -370,7 +370,7 @@ body{font-family:'Barlow',sans-serif;background:var(--bg);color:var(--text);font
   <div class="dpa-card myhome">
     <div class="dpa-hdr"><div class="dh-title">MyHome Only</div><div class="dh-sub">CalHFA Conventional + MyHome</div></div>
     <div class="dpa-body">
-      <div class="dpa-line"><span class="dl-lbl">Assistance %</span><span class="dl-val">3% of price</span></div>
+      <div class="dpa-line"><span class="dl-lbl">Assistance %</span><span class="dl-val">Up to 3% of price</span></div>
       <div class="dpa-line"><span class="dl-lbl">Interest Rate</span><span class="dl-val">1% simple</span></div>
       <div class="dpa-line"><span class="dl-lbl">Use of Funds</span><span class="dl-val">DP or CC</span></div>
       <div class="dpa-line"><span class="dl-lbl">Monthly Payment on DPA</span><span class="dl-val">$0</span></div>
@@ -428,6 +428,8 @@ body{font-family:'Barlow',sans-serif;background:var(--bg);color:var(--text);font
 function pa(v){return parseFloat(String(v||'').replace(/[$,%\s,]/g,''))||0;}
 function fmtd(n){return isNaN(n)||!n?'--':'$'+Math.round(n).toLocaleString();}
 function fmtpct(n){return isNaN(n)||!n?'--':parseFloat(n.toFixed(3))+'%';}
+function fmtSigned(n){n=Math.round(n||0);return n<0?'($'+Math.abs(n).toLocaleString()+')':'$'+n.toLocaleString();}
+function fmtMoney(n){return '$'+Math.round(Math.max(0,n||0)).toLocaleString();}
 function calcPI(p,r,y){
   if(!p||!r)return 0;
   var m=(r/100)/12,n=y*12;
@@ -629,16 +631,17 @@ document.addEventListener('DOMContentLoaded',function(){
 
 function calculate(){
   var pp=pa(gv('pp'));
-  var dpR=gv('dp');
-  var borrowerDp=dpR.indexOf('%')>=0?pp*pa(dpR)/100:pa(dpR);
   if(!pp)return;
 
   var zipPct=pa(gv('zip-pct'))||3;
   var mhRate=pa(gv('myhome-rate'));
   var zRate=pa(gv('zip-rate'));
   var ccPct=pa(gv('cc-pct'));
-  if(!ccPct&&ccPct!==0)ccPct=2.5;
+  if(!ccPct&&ccPct!==0)ccPct=2;
   var estCC=pp*(ccPct/100);
+  var stdCcPct=pa(gv('std-cc-pct'));
+  if(!stdCcPct&&stdCcPct!==0)stdCcPct=2;
+  var stdEstCC=pp*(stdCcPct/100);
   var mhPmi=pa(gv('mh-pmi'));
   var mhPts=pa(gv('myhome-pts'));
   var zPts=pa(gv('zip-pts'));
@@ -649,73 +652,88 @@ function calculate(){
   var insOv=pa(gv('ins-override'));
 
   // ── MyHome Only (CalHFA Conventional; MyHome covers the 3% min down payment) ──
-  var convMinDp=pp*0.03;
+  var convMinPct=pa(gv('conv-min-dp'))||3;
+  var convMinDp=pp*(convMinPct/100);
   var mhAssistAmt=Math.min(convMinDp,pp*0.03);
   var mhLoan=pp-convMinDp;
   var mhPtsDollar=mhLoan*(mhPts/100);
+  var mhTotalCC=estCC+mhPtsDollar;
   var mhIns=insOv>0?insOv:(mhLoan*0.003)/12;
   var mhPI=mhRate>0?calcPI(mhLoan,mhRate,30):0;
+  var mhDpaAccrual=(mhAssistAmt*0.01)/12; // MyHome accrues 1% simple interest/yr, deferred (no monthly payment)
   var mhPiti=mhPI+tax+mhIns+mhPmi;
-  var mhExtraDp=Math.max(0,borrowerDp-mhAssistAmt);
-  var mhOOP=mhExtraDp+estCC+mhPtsDollar;
+  var mhTrueCost=mhPiti+mhDpaAccrual;
+  var mhDpGap=Math.max(0,convMinDp-mhAssistAmt); // if required DP exceeds MyHome's 3% cap, borrower covers the gap
+  var mhOOP=Math.max(0,mhDpGap+mhTotalCC);
 
   sv('mh-amt',fmtd(mhAssistAmt));
-  sv('oop-mh',fmtd(mhOOP));
+  sv('oop-mh',fmtMoney(mhOOP));
 
   // ── ZIP Only (CalPLUS Conventional; borrower brings full min down payment; ZIP covers CC) ──
   var zLoan=pp-convMinDp;
   var zPtsDollar=zLoan*(zPts/100);
+  var zTotalCC=estCC+zPtsDollar;
   var zZipAmt=zLoan*(zipPct/100);
   var zIns=insOv>0?insOv:(zLoan*0.003)/12;
   var zPI=zRate>0?calcPI(zLoan,zRate,30):0;
+  var zDpaAccrual=0; // ZIP is 0% interest, no accrual
   var zPiti=zPI+tax+zIns+mhPmi;
-  var zCcShortfall=Math.max(0,estCC-zZipAmt);
-  var zOOP=convMinDp+zCcShortfall+zPtsDollar;
+  var zTrueCost=zPiti+zDpaAccrual;
+  var zCcShortfall=Math.max(0,zTotalCC-zZipAmt);
+  var zOOP=Math.max(0,convMinDp+zCcShortfall);
 
   sv('zip-pct-lbl',zipPct+'% of loan');
   sv('zip-amt',fmtd(zZipAmt));
-  sv('oop-zip',fmtd(zOOP));
+  sv('oop-zip',fmtMoney(zOOP));
 
   // ── MyHome + ZIP Combo (CalPLUS Conventional; MyHome covers DP, ZIP covers CC) ──
   var cLoan=pp-convMinDp;
-  var cPtsDollar=cLoan*(zPts/100);
+  var cPtsPct=mhPts+zPts;
+  var cPtsDollar=cLoan*(cPtsPct/100);
+  var cTotalCC=estCC+cPtsDollar;
   var cZipAmt=cLoan*(zipPct/100);
   var cMhAmt=Math.min(convMinDp,pp*0.03);
   var cIns=insOv>0?insOv:(cLoan*0.003)/12;
   var cPI=zRate>0?calcPI(cLoan,zRate,30):0;
+  var cDpaAccrual=(cMhAmt*0.01)/12; // only MyHome portion accrues interest; ZIP is 0%
   var cPiti=cPI+tax+cIns+mhPmi;
-  var cCcShortfall=Math.max(0,estCC-cZipAmt);
-  var cOOP=cCcShortfall+cPtsDollar;
+  var cTrueCost=cPiti+cDpaAccrual;
+  var cDpGap=Math.max(0,convMinDp-cMhAmt); // same 3% cap applies to MyHome's portion in Combo
+  var cCcShortfall=Math.max(0,cTotalCC-cZipAmt);
+  var cOOP=Math.max(0,cDpGap+cCcShortfall);
 
   sv('combo-mh',fmtd(cMhAmt));
   sv('combo-zip',fmtd(cZipAmt));
   sv('combo-total',fmtd(cMhAmt+cZipAmt));
-  sv('oop-combo',fmtd(cOOP));
+  sv('oop-combo',fmtMoney(cOOP));
 
   // ── Standard Conventional (no assistance, manual down payment and PMI) ──
   var stdDpR=gv('std-dp');
   var stdDp=stdDpR.indexOf('%')>=0?pp*pa(stdDpR)/100:pa(stdDpR);
   var stdLoan=pp-stdDp;
   var stdPtsDollar=stdLoan*(stdPts/100);
+  var stdTotalCC=stdEstCC+stdPtsDollar;
   var stdRate=pa(gv('std-rate'));
   var stdIns=insOv>0?insOv:(stdLoan*0.003)/12;
   var stdPmi=pa(gv('std-pmi'));
   var stdPI=stdRate>0?calcPI(stdLoan,stdRate,30):0;
+  var stdDpaAccrual=0; // no assistance loan
   var stdPiti=stdPI+tax+stdIns+stdPmi;
-  var stdOOP=stdDp+estCC+stdPtsDollar;
+  var stdTrueCost=stdPiti+stdDpaAccrual;
+  var stdOOP=Math.max(0,stdDp+stdTotalCC);
 
   sv('std-dp-amt',fmtd(stdDp)+' ('+fmtpct((stdDp/pp)*100)+'%)');
-  sv('std-total',fmtd(stdOOP));
-  sv('oop-std',fmtd(stdOOP));
+  sv('std-total',fmtMoney(stdOOP));
+  sv('oop-std',fmtMoney(stdOOP));
 
   // ── Table ──
   var tbody=el('dpa-tbody');
   if(tbody){
     var rows=[
-      ['Down Payment',[fmtd(convMinDp)+' (3%)',fmtd(convMinDp)+' (3%)',fmtd(convMinDp)+' (3%)',fmtd(stdDp)+' ('+fmtpct((stdDp/pp)*100)+'%)']],
+      ['Down Payment',[fmtd(convMinDp)+' ('+convMinPct+'%)',fmtd(convMinDp)+' ('+convMinPct+'%)',fmtd(convMinDp)+' ('+convMinPct+'%)',fmtd(stdDp)+' ('+fmtpct((stdDp/pp)*100)+'%)']],
       ['First Mortgage Rate',[mhRate>0?fmtpct(mhRate):'--',zRate>0?fmtpct(zRate):'--',zRate>0?fmtpct(zRate):'--',stdRate>0?fmtpct(stdRate):'--']],
-      ['Points (%)',[mhPts>0?mhPts+'%':'0%',zPts>0?zPts+'%':'0%',zPts>0?zPts+'%':'0%',stdPts>0?stdPts+'%':'0%']],
-      ['Points ($)',[fmtd(mhPtsDollar),fmtd(zPtsDollar),fmtd(cPtsDollar),fmtd(stdPtsDollar)]],
+      ['Points (%)',[mhPts?mhPts+'%':'0%',zPts?zPts+'%':'0%',cPtsPct?cPtsPct+'%':'0%',stdPts?stdPts+'%':'0%']],
+      ['Points ($)',[fmtSigned(mhPtsDollar),fmtSigned(zPtsDollar),fmtSigned(cPtsDollar),fmtSigned(stdPtsDollar)]],
       ['Loan Amount',[fmtd(mhLoan),fmtd(zLoan),fmtd(cLoan),fmtd(stdLoan)]],
       ['Monthly P&I',[mhRate>0?fmtd(mhPI):'--',zRate>0?fmtd(zPI):'--',zRate>0?fmtd(cPI):'--',stdRate>0?fmtd(stdPI):'--']],
       ['Property Tax',[fmtd(tax),fmtd(tax),fmtd(tax),fmtd(tax)]],
@@ -723,8 +741,11 @@ function calculate(){
       ['Monthly PMI',[mhPmi>0?fmtd(mhPmi):'N/A',mhPmi>0?fmtd(mhPmi):'N/A',mhPmi>0?fmtd(mhPmi):'N/A',stdPmi>0?fmtd(stdPmi):'N/A']],
       ['DPA Loan Amount',[fmtd(mhAssistAmt),fmtd(zZipAmt),fmtd(cMhAmt+cZipAmt),'N/A']],
       ['DPA Interest Rate',['1% simple','0% (zero)','1% / 0%','N/A']],
-      ['Est. Closing Costs ('+ccPct+'%)',[fmtd(estCC),fmtd(estCC),fmtd(estCC),fmtd(estCC)]],
-      ['Cash Needed at Closing',[fmtd(mhOOP),fmtd(zOOP),fmtd(cOOP),fmtd(stdOOP)]]
+      ['Base Closing Costs',[fmtd(estCC)+' ('+ccPct+'%)',fmtd(estCC)+' ('+ccPct+'%)',fmtd(estCC)+' ('+ccPct+'%)',fmtd(stdEstCC)+' ('+stdCcPct+'%)']],
+      ['Total Closing Costs (incl. pts)',[fmtSigned(mhTotalCC),fmtSigned(zTotalCC),fmtSigned(cTotalCC),fmtSigned(stdTotalCC)]],
+      ['Down Payment Gap (above MyHome 3% cap)',[fmtd(mhDpGap),'N/A (full DP required)',fmtd(cDpGap),'N/A']],
+      ['Cash Needed at Closing',[fmtMoney(mhOOP),fmtMoney(zOOP),fmtMoney(cOOP),fmtMoney(stdOOP)]],
+      ['Mo. DPA Interest Accrual (non-cash, deferred)',[fmtd(mhDpaAccrual),'N/A (0% int.)',fmtd(cDpaAccrual),'N/A']]
     ];
     var html='';
     for(var r=0;r<rows.length;r++){
@@ -736,19 +757,22 @@ function calculate(){
           +'<td><strong>'+(zRate>0?fmtd(zPiti):'--')+'</strong></td>'
           +'<td><strong>'+(zRate>0?fmtd(cPiti):'--')+'</strong></td>'
           +'<td><strong>'+(stdRate>0?fmtd(stdPiti):'--')+'</strong></td>';
-    html+='<tr class="piti"><td class="lbl">Total Monthly PITI+PMI</td>'+pc+'</tr>';
+    html+='<tr class="piti"><td class="lbl">Cash Monthly PITI+PMI</td>'+pc+'</tr>';
+    var tc='<td><strong>'+(mhRate>0?fmtd(mhTrueCost):'--')+'</strong></td>'
+          +'<td><strong>'+(zRate>0?fmtd(zTrueCost):'--')+'</strong></td>'
+          +'<td><strong>'+(zRate>0?fmtd(cTrueCost):'--')+'</strong></td>'
+          +'<td><strong>'+(stdRate>0?fmtd(stdTrueCost):'--')+'</strong></td>';
+    html+='<tr class="piti"><td class="lbl">True Monthly Cost (incl. DPA accrual)</td>'+tc+'</tr>';
     tbody.innerHTML=html;
   }
 }
 function buildSummary(){
   var pp=pa(gv('pp'));
-  var dpR=gv('dp');
-  var borrowerDp=dpR.indexOf('%')>=0?pp*pa(dpR)/100:pa(dpR);
   var zipPct=pa(gv('zip-pct'))||3;
   var mhRate=pa(gv('myhome-rate'));
   var zRate=pa(gv('zip-rate'));
   var ccPct=pa(gv('cc-pct'));
-  if(!ccPct&&ccPct!==0)ccPct=2.5;
+  if(!ccPct&&ccPct!==0)ccPct=2;
   var mhPmi=pa(gv('mh-pmi'));
   var mhPts=pa(gv('myhome-pts'));
   var zPts=pa(gv('zip-pts'));
@@ -762,59 +786,78 @@ function buildSummary(){
 
   var ti=getTaxIns(pp,pp*0.97); var tax=ti.tax;
   var insOv=pa(gv('ins-override'));
-  var convMinDp=pp*0.03;
+  var convMinPct=pa(gv('conv-min-dp'))||3;
+  var convMinDp=pp*(convMinPct/100);
   var estCC=pp*(ccPct/100);
+  var stdCcPct=pa(gv('std-cc-pct'));
+  if(!stdCcPct&&stdCcPct!==0)stdCcPct=2;
+  var stdEstCC=pp*(stdCcPct/100);
 
   var mhLoan=pp-convMinDp;
   var mhPtsDollar=mhLoan*(mhPts/100);
+  var mhTotalCC=estCC+mhPtsDollar;
   var mhIns=insOv>0?insOv:(mhLoan*0.003)/12;
   var mhPI=mhRate>0?calcPI(mhLoan,mhRate,30):0;
   var mhPiti=mhPI+tax+mhIns+mhPmi;
   var mhAssistAmt=Math.min(convMinDp,pp*0.03);
-  var mhOOP=estCC+mhPtsDollar;
+  var mhDpaAccrual=(mhAssistAmt*0.01)/12;
+  var mhTrueCost=mhPiti+mhDpaAccrual;
+  var mhDpGap=Math.max(0,convMinDp-mhAssistAmt);
+  var mhOOP=Math.max(0,mhDpGap+mhTotalCC);
 
   var zLoan=pp-convMinDp;
   var zPtsDollar=zLoan*(zPts/100);
+  var zTotalCC=estCC+zPtsDollar;
   var zZipAmt=zLoan*(zipPct/100);
   var zIns=insOv>0?insOv:(zLoan*0.003)/12;
   var zPI=zRate>0?calcPI(zLoan,zRate,30):0;
   var zPiti=zPI+tax+zIns+mhPmi;
-  var zCcShortfall=Math.max(0,estCC-zZipAmt);
-  var zOOP=convMinDp+zCcShortfall+zPtsDollar;
+  var zDpaAccrual=0;
+  var zTrueCost=zPiti+zDpaAccrual;
+  var zCcShortfall=Math.max(0,zTotalCC-zZipAmt);
+  var zOOP=Math.max(0,convMinDp+zCcShortfall);
 
   var cLoan=pp-convMinDp;
-  var cPtsDollar=cLoan*(zPts/100);
+  var cPtsPct=mhPts+zPts;
+  var cPtsDollar=cLoan*(cPtsPct/100);
+  var cTotalCC=estCC+cPtsDollar;
   var cZipAmt=cLoan*(zipPct/100);
   var cMhAmt=Math.min(convMinDp,pp*0.03);
   var cIns=insOv>0?insOv:(cLoan*0.003)/12;
   var cPI=zRate>0?calcPI(cLoan,zRate,30):0;
   var cPiti=cPI+tax+cIns+mhPmi;
-  var cCcShortfall=Math.max(0,estCC-cZipAmt);
-  var cOOP=cCcShortfall+cPtsDollar;
+  var cDpaAccrual=(cMhAmt*0.01)/12;
+  var cTrueCost=cPiti+cDpaAccrual;
+  var cDpGap=Math.max(0,convMinDp-cMhAmt); // same 3% cap applies to MyHome's portion in Combo
+  var cCcShortfall=Math.max(0,cTotalCC-cZipAmt);
+  var cOOP=Math.max(0,cDpGap+cCcShortfall);
 
   var stdDpR=gv('std-dp');
   var stdDp=stdDpR.indexOf('%')>=0?pp*pa(stdDpR)/100:pa(stdDpR);
   var stdLoan=pp-stdDp;
   var stdPtsDollar=stdLoan*(stdPts/100);
+  var stdTotalCC=stdEstCC+stdPtsDollar;
   var stdRate=pa(gv('std-rate'));
   var stdIns=insOv>0?insOv:(stdLoan*0.003)/12;
   var stdPmi=pa(gv('std-pmi'));
   var stdPI=stdRate>0?calcPI(stdLoan,stdRate,30):0;
   var stdPiti=stdPI+tax+stdIns+stdPmi;
-  var stdOOP=stdDp+estCC+stdPtsDollar;
+  var stdDpaAccrual=0;
+  var stdTrueCost=stdPiti+stdDpaAccrual;
+  var stdOOP=Math.max(0,stdDp+stdTotalCC);
 
   sv('ss-mh',fmtd(mhAssistAmt));
   sv('ss-zip',fmtd(zZipAmt));
   sv('ss-combo',fmtd(cMhAmt+cZipAmt));
-  sv('ss-std',fmtd(stdOOP));
+  sv('ss-std',fmtMoney(stdOOP));
 
   var tbody=el('ssum-dpa');
   if(tbody){
     var rows=[
-      ['Down Payment',[fmtd(convMinDp)+' (3%)',fmtd(convMinDp)+' (3%)',fmtd(convMinDp)+' (3%)',fmtd(stdDp)+' ('+fmtpct((stdDp/pp)*100)+'%)']],
+      ['Down Payment',[fmtd(convMinDp)+' ('+convMinPct+'%)',fmtd(convMinDp)+' ('+convMinPct+'%)',fmtd(convMinDp)+' ('+convMinPct+'%)',fmtd(stdDp)+' ('+fmtpct((stdDp/pp)*100)+'%)']],
       ['First Mortgage Rate',[mhRate>0?fmtpct(mhRate):'--',zRate>0?fmtpct(zRate):'--',zRate>0?fmtpct(zRate):'--',stdRate>0?fmtpct(stdRate):'--']],
-      ['Points (%)',[mhPts>0?mhPts+'%':'0%',zPts>0?zPts+'%':'0%',zPts>0?zPts+'%':'0%',stdPts>0?stdPts+'%':'0%']],
-      ['Points ($)',[fmtd(mhPtsDollar),fmtd(zPtsDollar),fmtd(cPtsDollar),fmtd(stdPtsDollar)]],
+      ['Points (%)',[mhPts?mhPts+'%':'0%',zPts?zPts+'%':'0%',cPtsPct?cPtsPct+'%':'0%',stdPts?stdPts+'%':'0%']],
+      ['Points ($)',[fmtSigned(mhPtsDollar),fmtSigned(zPtsDollar),fmtSigned(cPtsDollar),fmtSigned(stdPtsDollar)]],
       ['Loan Amount',[fmtd(mhLoan),fmtd(zLoan),fmtd(cLoan),fmtd(stdLoan)]],
       ['Monthly P&I',[mhRate>0?fmtd(mhPI):'--',zRate>0?fmtd(zPI):'--',zRate>0?fmtd(cPI):'--',stdRate>0?fmtd(stdPI):'--']],
       ['Property Tax',[fmtd(tax),fmtd(tax),fmtd(tax),fmtd(tax)]],
@@ -822,8 +865,11 @@ function buildSummary(){
       ['Monthly PMI',[mhPmi>0?fmtd(mhPmi):'N/A',mhPmi>0?fmtd(mhPmi):'N/A',mhPmi>0?fmtd(mhPmi):'N/A',stdPmi>0?fmtd(stdPmi):'N/A']],
       ['DPA Loan Amount',[fmtd(mhAssistAmt),fmtd(zZipAmt),fmtd(cMhAmt+cZipAmt),'N/A']],
       ['DPA Interest Rate',['1% simple','0% (zero)','1% / 0%','N/A']],
-      ['Est. Closing Costs ('+ccPct+'%)',[fmtd(estCC),fmtd(estCC),fmtd(estCC),fmtd(estCC)]],
-      ['Cash Needed at Closing',[fmtd(mhOOP),fmtd(zOOP),fmtd(cOOP),fmtd(stdOOP)]]
+      ['Base Closing Costs',[fmtd(estCC)+' ('+ccPct+'%)',fmtd(estCC)+' ('+ccPct+'%)',fmtd(estCC)+' ('+ccPct+'%)',fmtd(stdEstCC)+' ('+stdCcPct+'%)']],
+      ['Total Closing Costs (incl. pts)',[fmtSigned(mhTotalCC),fmtSigned(zTotalCC),fmtSigned(cTotalCC),fmtSigned(stdTotalCC)]],
+      ['Down Payment Gap (above MyHome 3% cap)',[fmtd(mhDpGap),'N/A (full DP required)',fmtd(cDpGap),'N/A']],
+      ['Cash Needed at Closing',[fmtMoney(mhOOP),fmtMoney(zOOP),fmtMoney(cOOP),fmtMoney(stdOOP)]],
+      ['Mo. DPA Interest Accrual (non-cash)',[fmtd(mhDpaAccrual),'N/A (0% int.)',fmtd(cDpaAccrual),'N/A']]
     ];
     var html='';
     for(var r=0;r<rows.length;r++){
@@ -835,7 +881,12 @@ function buildSummary(){
           +'<td><strong>'+(zRate>0?fmtd(zPiti):'--')+'</strong></td>'
           +'<td><strong>'+(zRate>0?fmtd(cPiti):'--')+'</strong></td>'
           +'<td><strong>'+(stdRate>0?fmtd(stdPiti):'--')+'</strong></td>';
-    html+='<tr class="piti"><td class="lbl">Total Monthly PITI+PMI</td>'+pc+'</tr>';
+    html+='<tr class="piti"><td class="lbl">Cash Monthly PITI+PMI</td>'+pc+'</tr>';
+    var tc='<td><strong>'+(mhRate>0?fmtd(mhTrueCost):'--')+'</strong></td>'
+          +'<td><strong>'+(zRate>0?fmtd(zTrueCost):'--')+'</strong></td>'
+          +'<td><strong>'+(zRate>0?fmtd(cTrueCost):'--')+'</strong></td>'
+          +'<td><strong>'+(stdRate>0?fmtd(stdTrueCost):'--')+'</strong></td>';
+    html+='<tr class="piti"><td class="lbl">True Monthly Cost (incl. DPA accrual)</td>'+tc+'</tr>';
     tbody.innerHTML=html;
   }
 }
