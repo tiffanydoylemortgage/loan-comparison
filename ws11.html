@@ -833,6 +833,7 @@ document.addEventListener('DOMContentLoaded',function(){
   if(d&&!d.value)d.value=new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
   autoRestore();
   updateCounty();
+  if(typeof calculate==='function')calculate();
 });
 
 function renderSumVis(pid,opts,tax,ins,pmi,hoa){
