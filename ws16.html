@@ -761,7 +761,7 @@ function buildDetailTable(tbodyId,cols,targets,yearData,noteRate,fullPI,tax,ins,
     rows.push(['Insurance', rangeMap(cols,TB_MAXN,function(i){return fmtd(ins);}).concat([fmtd(ins)])]);
     rows.push(['HOA', rangeMap(cols,TB_MAXN,function(i){return hoa>0?fmtd(hoa):'N/A';}).concat([hoa>0?fmtd(hoa):'N/A'])]);
   }
-  rows.push(['Full PITI at Target', rangeMap(cols,TB_MAXN,function(i){return targets[i]>0?fmtd(yearData[i].targetPI+tax+ins+hoa):'--';}).concat([fmtd(fullPI+tax+ins+hoa)])]);
+  var pitiRow=['Total PITI / Month', rangeMap(cols,TB_MAXN,function(i){return targets[i]>0?fmtd(yearData[i].targetPI+tax+ins+hoa):'--';}).concat([fmtd(fullPI+tax+ins+hoa)])];
 
   var html='';
   for(var r=0;r<rows.length;r++){
@@ -772,6 +772,12 @@ function buildDetailTable(tbodyId,cols,targets,yearData,noteRate,fullPI,tax,ins,
     }
     html+='<tr><td class="lbl">'+row[0]+'</td>'+cells+'</tr>';
   }
+  var pitiCells='';
+  for(var c=0;c<TB_MAXN+1;c++){
+    if(c<TB_MAXN&&c>=cols){pitiCells+='<td style="display:none;"></td>';}
+    else{pitiCells+='<td><strong>'+pitiRow[1][c]+'</strong></td>';}
+  }
+  html+='<tr class="piti"><td class="lbl">'+pitiRow[0]+'</td>'+pitiCells+'</tr>';
   tbody.innerHTML=html;
 }
 
