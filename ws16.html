@@ -104,11 +104,17 @@ body{font-family:'Barlow',sans-serif;background:var(--bg);color:var(--text);font
 .disc{background:var(--dark);color:rgba(255,255,255,.6);padding:10px 20px;font-size:10px;line-height:1.6;}
 .disc strong{color:rgba(255,255,255,.85);}
 #print-summary{display:none;}
+@page{size:landscape;margin:0.35in;}
 @media print{
   body > *{display:none!important;}
   #print-summary{display:block!important;font-family:Arial,sans-serif;}
   #print-summary .close-x,
   #print-summary .modal-actions{display:none!important;}
+  /* Table sizing so up to 5 year columns + full-rate column fit cleanly on a landscape page */
+  #print-summary .stbl{font-size:10px!important;table-layout:fixed;width:100%;}
+  #print-summary .stbl th,#print-summary .stbl td{padding:5px 6px!important;word-break:break-word;}
+  #print-summary .stbl th.opt,#print-summary .stbl td{font-size:10px!important;}
+  #print-summary .stbl .lbl{font-size:10px!important;white-space:normal;}
 
   /* Force vis cards grid to render */
   #print-summary .sum-vis-cards{
