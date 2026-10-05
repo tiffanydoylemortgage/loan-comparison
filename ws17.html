@@ -227,7 +227,7 @@ body{font-family:'Barlow',sans-serif;background:var(--bg);color:var(--text);font
 .nf-band .lo .t b{display:block;color:#fff;font-size:13px;line-height:1.3;}
 .nf-meta{font-size:12px;color:#5a6480;margin:8px 0 12px;}
 .nf-line{display:inline-block;min-width:2.8in;border-bottom:1px solid #9aa8c4;color:#001D50;font-weight:700;padding:0 4px;}
-.nf-boxes{width:100%;border-collapse:collapse;table-layout:fixed;margin-bottom:14px;}
+.nf-boxes{width:100%;box-sizing:border-box;border-collapse:collapse;table-layout:fixed;margin-bottom:14px;}
 .nf-boxes td.b{width:32%;border:2px solid #d0d8e8;border-radius:8px;text-align:center;padding:10px 6px;vertical-align:top;}
 .nf-boxes td.sp{width:2%;border:0;padding:0;}
 .nf-boxes td.b.price{background:#f4f6fa;border-color:#001D50;}
@@ -236,7 +236,7 @@ body{font-family:'Barlow',sans-serif;background:var(--bg);color:var(--text);font
 .nf-boxes .ba{font-family:'Barlow Condensed',Arial,sans-serif;font-size:26px;font-weight:700;color:#001D50;line-height:1.1;}
 .nf-boxes td.b.funds .ba{color:#1a5c3a;}
 .nf-boxes .bs{font-size:9px;color:#5a6480;margin-top:4px;line-height:1.3;}
-.nf-tbl{width:100%;max-width:5.6in;border-collapse:collapse;font-size:13px;}
+.nf-tbl{width:100%;box-sizing:border-box;border-collapse:collapse;font-size:13px;}
 .nf-tbl th{background:#1a5c3a;color:#fff;font-size:12px;font-weight:700;font-style:italic;text-align:center;padding:5px 8px;border:1px solid #1a5c3a;}
 .nf-tbl td{border:1px solid #9aa8c4;padding:7px 10px;vertical-align:middle;line-height:1.25;}
 .nf-tbl td.k{background:#f1f8f4;text-align:right;width:62%;}
@@ -246,8 +246,8 @@ body{font-family:'Barlow',sans-serif;background:var(--bg);color:var(--text);font
 .nf-meta{font-size:12px;color:#5a6480;margin-top:7px;}
 .nf-line{display:inline-block;min-width:2.8in;border-bottom:1px solid #9aa8c4;color:#001D50;font-weight:700;padding:0 4px;}
 .nf-small{font-size:10px;font-weight:400;color:#5a6480;}
-.nf-note{font-size:10px;font-style:italic;font-weight:700;color:#001D50;margin-top:10px;max-width:5.6in;line-height:1.4;}
-.nf-flags{font-size:10px;color:#7a5414;background:#fff8e6;border:1px solid #c98a1f;border-radius:4px;padding:5px 8px 5px 10px;margin-top:10px;max-width:5.6in;display:none;}
+.nf-note{font-size:10px;font-style:italic;font-weight:700;color:#001D50;margin-top:10px;line-height:1.4;}
+.nf-flags{font-size:10px;color:#7a5414;background:#fff8e6;border:1px solid #c98a1f;border-radius:4px;padding:5px 8px 5px 10px;margin-top:10px;display:none;}
 .nf-flags ul{margin:0;padding-left:14px;}
 
 @page{size:letter portrait;margin:.4in;}
